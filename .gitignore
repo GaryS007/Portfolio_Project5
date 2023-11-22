@@ -1,8 +1,10 @@
 core.Microsoft*
 core.mongo*
 core.python*
+*.sqlite3
+*.pyc
 env.py
-__pycache__/
+__pycache__
 *.py[cod]
 node_modules/
 .github/
