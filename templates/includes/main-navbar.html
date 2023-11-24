@@ -17,11 +17,11 @@
                 Acoustic Drums
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Drumkits</a>
-                <a href="" class="dropdown-item ">Snare Drums</a>
-                <a href="" class="dropdown-item ">Cymbals</a>
-                <a href="" class="dropdown-item ">Accessories</a>
-                <a href="" class="dropdown-item">All Acoustic Products</a>
+                <a href="{% url 'products' %}?category=acoustic-drumkits" class="dropdown-item">Drumkits</a>
+                <a href="{% url 'products' %}?category=snare-drums" class="dropdown-item ">Snare Drums</a>
+                <a href="{% url 'products' %}?category=cymbals" class="dropdown-item ">Cymbals</a>
+                <a href="{% url 'products' %}?category=accessories" class="dropdown-item ">Accessories</a>
+                <a href="{% url 'products' %}?category=acoustic-drumkits,snare-drums,cymbals,accessories" class="dropdown-item">All Acoustic Products</a>
             </div>
         </li>
 
@@ -30,10 +30,10 @@
                 Electric Drums
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Electronic Drumkits</a>
-                <a href="" class="dropdown-item ">Electronic Drum Modules</a>
-                <a href="" class="dropdown-item ">Electronic Drum Pads</a>
-                <a href="" class="dropdown-item">All Electronic Products</a>
+                <a href="{% url 'products' %}?category=electronic-drumkits" class="dropdown-item">Electronic Drumkits</a>
+                <a href="{% url 'products' %}?category=drum-modules" class="dropdown-item ">Electronic Drum Modules</a>
+                <a href="{% url 'products' %}?category=electronic-drum-pads" class="dropdown-item ">Electronic Drum Pads</a>
+                <a href="{% url 'products' %}?category=electronic-drumkits,drum-modules,electronic-drum-pads" class="dropdown-item">All Electronic Products</a>
             </div>
         </li>
 
@@ -42,9 +42,9 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="" class="dropdown-item">Clearance</a>
-                <a href="" class="dropdown-item ">B Stock</a>
-                <a href="" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?category=" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?category=" class="dropdown-item ">B Stock</a>
+                <a href="{% url 'products' %}?category=" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Product, Category
+from .models import Product, Category, SpecialOffers
 from django_summernote.admin import SummernoteModelAdmin
 
 @admin.register(Product)
@@ -16,13 +16,24 @@ class ProductAdmin(SummernoteModelAdmin):
         "rating",
         "out_of_stock",
         "new_product",
+        "special_offers",
     )
-    summernote_fields = "description"
+    summernote_fields = "description, product_dimensions, additional_description"
 
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     """
     Displays the Category Model in the Admin Panel
+    """
+    list_display = (
+        "friendly_name",
+        "name",
+    )
+
+@admin.register(SpecialOffers)
+class SpecialOffersAdmin(admin.ModelAdmin):
+    """
+    Displays the Special Offer Model in the admin panel
     """
     list_display = (
         "friendly_name",
