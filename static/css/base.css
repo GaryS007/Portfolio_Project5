@@ -80,6 +80,11 @@ body {
     z-index: -1;
 }
 
+a.category-badge>span.badge:hover {
+    background: #23a1d1 !important;
+    color: #fff !important;
+}
+
 /* Navbar & Menu Items */
 
 .bg-light {
