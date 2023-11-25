@@ -42,9 +42,9 @@
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
-                <a href="{% url 'products' %}?category=" class="dropdown-item">Clearance</a>
-                <a href="{% url 'products' %}?category=" class="dropdown-item ">B Stock</a>
-                <a href="{% url 'products' %}?category=" class="dropdown-item">All Specials</a>
+                <a href="{% url 'products' %}?special_offers=clearance" class="dropdown-item">Clearance</a>
+                <a href="{% url 'products' %}?special_offers=b-stock" class="dropdown-item ">B Stock</a>
+                <a href="{% url 'products' %}?special_offers=clearance,b-stock" class="dropdown-item">All Specials</a>
             </div>
         </li>
     </ul>
