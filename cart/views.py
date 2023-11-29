@@ -3,15 +3,15 @@ from django.contrib import messages
 
 from products.models import Product
 
-def view_checkout(request):
+def view_cart(request):
     """ 
-    A view to returns the products checkout page
+    A view that returns the cart page
     """
 
-    return render(request, 'checkout/checkout.html')
+    return render(request, 'cart/cart.html')
 
 
-def add_to_checkout(request, item_id):
+def add_to_cart(request, item_id):
     """ 
     Add a quantity of the specified product to the shopping cart
     """
@@ -32,7 +32,7 @@ def add_to_checkout(request, item_id):
     return redirect(redirect_url)
 
 
-def adjust_checkout(request, item_id):
+def adjust_cart(request, item_id):
     """ 
     Adjust the quantity of the specified product in the shopping cart
     """
@@ -49,12 +49,12 @@ def adjust_checkout(request, item_id):
         messages.success(request, f'Removed {product.name} from your cart')
 
     request.session['cart'] = cart
-    return redirect(reverse('view_checkout'))
+    return redirect(reverse('view_cart'))
 
 
-def remove_from_checkout(request, item_id):
+def remove_from_cart(request, item_id):
     """ 
-    Remove item from checkout
+    Remove item from cart
     """
 
     try:

@@ -45,7 +45,7 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'home',
     'products',
-    'checkout',
+    'cart',
     'django_summernote',
 ]
 
@@ -97,7 +97,7 @@ TEMPLATES = [
                 'django.template.context_processors.request', # required by allauth
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
-                'checkout.contexts.checkout_contents',
+                'cart.contexts.cart_contents',
             ],
         },
     },
