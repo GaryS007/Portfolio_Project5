@@ -1,6 +1,6 @@
-<!-- Checkout Form -->
+<!-- Cart Form -->
 
-<form class="form update-form" method="POST" action="{% url 'adjust_checkout' item.item_id %}">
+<form class="form update-form" method="POST" action="{% url 'adjust_cart' item.item_id %}">
     {% csrf_token %}
     <div class="form-group">
         <div class="input-group input-group-{{ item.item_id }}">
@@ -30,4 +30,4 @@
 <a class="update-link text-info"><small>Update</small></a>
 <a class="remove-item text-danger float-right" id="remove_{{ item.item_id }}"><small>Remove</small></a>  
 
-<!-- End of Checkout Form -->
+<!-- End of Cart Form -->
