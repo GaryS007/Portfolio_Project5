@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from .models import Order, OrderLineItem
 from products.models import Product
 
+import json
 import time
 import stripe
 
@@ -85,7 +86,7 @@ class StripeWH_Handler:
                     original_cart=cart,
                     stripe_pid=pid,
                 )
-                for item_id, item_data in cart.items():
+                for item_id, item_data in json.loads(cart).items():
                     product = Product.objects.get(id=item_id)
                     isinstance(item_data, int)
                     order_line_item = OrderLineItem(
