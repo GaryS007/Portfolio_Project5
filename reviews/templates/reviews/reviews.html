@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_header %}
+    <div class="container header-container">
+        <div class="row">
+            <div class="col"></div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block content %}
+    <div class="overlay"></div>
+    <div class="container">
+        <div class="row">
+            <div class="col-12 text-center">
+                <hr>
+                <h2 class="logo-font mb-4">Customer Reviews</h2>
+                {% if user.is_authenticated %}
+                    <h6 class="text-muted">Want to add a review? Click Here</h5>
+                {% else %}
+                    <h6 class="text-muted">You need to login or register to write a review: <a href="{% url 'profile' %}">My Account</a></h5>
+                {% endif %}
+                <hr>
+            </div>
+        </div>
+    </div>
+    {% for review in list_reviews %}
+    <div class="container col-12">
+        <p><strong>{{ review.review_title}}</strong></p>
+        <p class="review-text text-muted">by: <strong>{{ review.name }}</strong></p>
+        <p>{{ review.review_text }}</p>
+        <p class="text-muted review-text">Posted on: {{ review.updated_on }}</p>
+        <span id="review-rating">
+            <!-- Star Rating if statement -->
+            {% if review.review_rating == 5 %}
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            {% elif review.review_rating == 4 %}
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            {% elif review.review_rating == 3 %}
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            {% elif review.review_rating == 2 %}
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            {% else %}
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            <i class="fa-regular fa-star"></i>
+            {% endif %}
+        </span>
+        <hr>
+        <!-- END of Star Rating if statement -->
+    </div>
+    
+    {% endfor %}
+{% endblock %}

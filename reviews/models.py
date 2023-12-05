@@ -5,7 +5,7 @@ from django.urls import reverse
 
 class Reviews(models.Model):
     """Defines the review model"""
-    review_title = models.Charfield(max_length=120)
+    review_title = models.CharField(max_length=120)
     name = models.CharField(max_length=200)
     updated_on = models.DateTimeField(auto_now=True)
     review_text = models.TextField(null=True, max_length=500)
