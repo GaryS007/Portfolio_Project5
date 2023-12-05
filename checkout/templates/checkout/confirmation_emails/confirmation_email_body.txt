@@ -9,7 +9,7 @@ Order Total: ${{ order.order_total }}
 Delivery: ${{ order.delivery_cost }}
 Grand Total: ${{ order.grand_total }}
 
-Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}Loot.
+Your order will be shipped to {{ order.street_address1 }} in {{ order.town_or_city }}, {{ order.country }}.
 
 We have your contact number: {{ order.phone_number }} and our deliveiry driver may contact you in advance of your delivery.
 

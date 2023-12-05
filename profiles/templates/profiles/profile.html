@@ -55,10 +55,10 @@
                                     </td>
                                     <td>{{ order.date }}</td>
                                     <td>
-                                        <ul class="list-unstled">
+                                        <ul class="list-unstyled">
                                             {% for items in order.lineitems.all %}
                                             <li class="small">
-                                                {{ item.product.name }} x{{ item.quantity }}
+                                                {{ items.product.name }} x {{ items.quantity }}
                                             </li>
                                             {% endfor %}
                                         </ul>
