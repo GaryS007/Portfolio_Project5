@@ -25,7 +25,7 @@ def add_review(request):
         if form.is_valid():
             form.save()
             review = form.save()
-            messages.success(request, 'Successfully posted a review')
+            messages.success(request, 'Successfully posted a review, waiting for approval.')
             return redirect(reverse('reviews'))
         else:
             messages.error(request, 'Failed to add review. Please ensure the form is valid.')
@@ -35,6 +35,34 @@ def add_review(request):
     template = 'reviews/add_review.html'
     context = {
         'form': form,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_review(request, pk):
+    """ Edit an existing review """
+    if not request.user:
+        messages.error(request, 'Sorry, you must login to do that.')
+        return redirect(reverse('reviews'))
+    
+    review = get_object_or_404(Reviews, id=pk)
+    if request.method == 'POST':
+        form = ReviewsForm(request.POST, request.FILES, instance=review)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated your review, waiting for approval.')
+            return redirect(reverse('reviews'))
+        else:
+            messages.error(request, 'Failed to update your review. Please ensure the form is valid.')
+    else:
+        form = ReviewsForm(instance=review)
+
+    template = 'reviews/edit_review.html'
+    context = {
+        'form': form,
+        'review': review,
     }
 
     return render(request, template, context)

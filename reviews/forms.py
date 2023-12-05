@@ -11,5 +11,5 @@ class ReviewsForm(forms.ModelForm):
         fields = ("review_title", "review_rating", "review_text")
     
     image = forms.ImageField(
-        label="Image", required=False, widget=CustomClearableFileInput
+        label='Image', required=False, widget=CustomClearableFileInput
     )
