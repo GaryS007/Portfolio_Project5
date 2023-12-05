@@ -65,6 +65,13 @@
             <i class="fa-regular fa-star"></i>
             {% endif %}
         </span>
+        <div class="card h-100 border-0">
+            {% if review.image %}
+                <img class="review-image img-fluid mt-3 card-img-top" src="{{ review.image.url }}" alt="{{ review.review_title }} Review Image">
+            {% else %}
+                <img class="review-image img-fluid mt-3 card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ review.review_title }} Review Image">
+            {% endif %}
+        </div>
         <hr>
         <!-- END of Star Rating if statement -->
     </div>
