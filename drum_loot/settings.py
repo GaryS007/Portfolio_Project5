@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'cart',
     'checkout',
     'profiles',
+    'reviews',
     
     # Other
     'django_summernote',
