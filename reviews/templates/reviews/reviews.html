@@ -17,11 +17,11 @@
                 <hr>
                 <h2 class="logo-font mb-4">Customer Reviews</h2>
                 {% if request.user.is_authenticated %}
-                    <h6 class="text-muted">Want to add a review?
-                        <small class="ml-3">
-                            <a href="{% url 'add_review' %}">Add Review</a>
-                        </small>
+                    <h6 class="text-muted">We love to hear from our customers, your feedback is what helps is constantly improve and grow as a business.
                     </h6>
+                    <div class="mt-4">
+                        <a class="btn btn-black rounded-0 text-uppercase mt-2" href="{% url 'add_review' %}" role="button">Add Review</a>
+                    </div>
                 {% else %}
                     <h6 class="text-muted">You need to login or register to write a review: <a href="{% url 'profile' %}">My Account</a></h5>
                 {% endif %}
@@ -68,6 +68,7 @@
             <i class="fa-regular fa-star"></i>
             <i class="fa-regular fa-star"></i>
             {% endif %}
+            <!-- END of Star Rating if statement -->
         </span>
         <div>
             {% if review.image %}
@@ -78,13 +79,35 @@
         </div>
         {% if request.user.is_authenticated and user.username == review.name or user.is_superuser %}
         <div>
-            <a class="btn-sm btn btn-outline-success" href="{% url 'edit_review' review.id %}" role="button">Edit</a> |
-            <a class="btn-sm btn btn-outline-danger" href="{% url 'delete_review' review.id %}" role="button">Delete</a>
+            <a class="btn btn-black rounded-0 text-uppercase mt-2" href="{% url 'edit_review' review.id %}" role="button">Edit</a> |
+            <!-- Button trigger modal -->
+            <a class="btn-delete btn rounded-0 text-uppercase btn-outline-danger mt-2" data-toggle="modal" data-target="#exampleModal" role="button" data-whatever="{{ review.id }}">Delete</a>
+            
         </div>
         {% endif %}
         <hr>
-        <!-- END of Star Rating if statement -->
     </div>
-    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Delete Review</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            Are you sure you want to <strong class="text-danger">DELETE</strong> your Review?
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a href="{% url 'delete_review' review.id %}">
+            <button type="button" class="btn btn-danger">Delete Review</button>
+            </a>
+            </div>
+        </div>
+        </div>
+    </div>
     {% endfor %}
 {% endblock %}

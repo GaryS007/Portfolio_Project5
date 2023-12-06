@@ -4,30 +4,24 @@
 <!-- Base Body HTML -->
 <body>
   <header class="container-fluid fixed-top">
-    <div id="topnav" class="row bg-white pt-lg-2 d-none d-lg-flex">
+    <div id="topnav" class="row bg-white color-darkgrey pt-lg-2 d-none d-lg-flex">
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
-          <h2 class="logo-font text-black my-0"><strong>Drum</strong> Loot</h2>
+          <h2 class="logo-font text-white my-0"><strong>Drum</strong> Loot</h2>
         </a>
       </div>
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
+      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 flex-shrink-1">
         <form method="GET" action="{% url 'products' %}">
-          <div class="input-group w-100">
-            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our store">
-            <div class="input-group-append">
-              <button class="form-control btn btn-black border border-black rounded-0" type="submit">
-                <span class="icon">
-                  <i class="fas fa-search"></i>
-                </span>
-              </button>
-            </div>
+          <div class="wrap">
+            <input type="text" class="input" placeholder="Search our store">
+            <i class="fa fa-search" aria-hidden="true"></i>
           </div>
         </form>
       </div>
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
         <ul class="list-inline list-unstyled text-center text-lg-right my-0">
           <li class="list-inline-item dropdown">
-            <a class="text-black nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="text-center">
                 <div><i class="fas fa-user fa-lg"></i></div>
                 <p class="my-0">My Account</p>
@@ -47,7 +41,7 @@
             </div>
           </li>
           <li class="list-inline-item">
-            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-black{% endif %} nav-link" href="{% url 'view_cart' %}">
+            <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_cart' %}">
               <div class="text-center">
                 <div><i class="fas fa-shopping-bag fa-lg"></i></div>
                   <p class="my-0">
@@ -64,7 +58,7 @@
       </div>
     </div>
     <div class="row bg-white">
-      <nav class="navbar navbar-expand-lg navbar-light bg-light w-100">
+      <nav class="navbar navbar-expand-lg navbar-light color-darkgrey text-white w-100">
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#main-nav" aria-controls="main-nav" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
@@ -103,13 +97,18 @@
 
   {% block page_header %}
   {% endblock %}
-
-  {% block content %}
-  {% endblock %}
-
+{% include 'includes/footer.html' %}
   {% block postloadjs %}
   <script type="text/javascript">
     $('.toast').toast('show');
+    $(document).ready(function(){
+  
+      $(".fa-search").click(function(){
+        $(".wrap, .input").toggleClass("active");
+        $("input[type='text']").focus();
+      });
+      
+    });
   </script>
   {% endblock %}
   
