@@ -4,6 +4,7 @@ from django.contrib import messages
 from django.http import HttpResponse
 from django.contrib.auth.decorators import login_required
 from .forms import ReviewsForm
+from profiles.models import UserProfile
 
 
 def reviews(request):
@@ -16,21 +17,21 @@ def reviews(request):
 @login_required
 def add_review(request):
     """ Add a review to the reviews page """
+    profile = get_object_or_404(UserProfile, user=request.user)
     if not request.user:
         messages.error(request, 'Sorry, you must login to do that.')
         return redirect(reverse('reviews'))
-
+    
     if request.method == 'POST':
-        form = ReviewsForm(request.POST, request.FILES)
+        form = ReviewsForm(request.POST, request.FILES,)
         if form.is_valid():
             form.save()
-            review = form.save()
             messages.success(request, 'Successfully posted a review, waiting for approval.')
             return redirect(reverse('reviews'))
         else:
             messages.error(request, 'Failed to add review. Please ensure the form is valid.')
     else:
-        form = ReviewsForm()
+        form = ReviewsForm(initial={'name': profile.user,})
 
     template = 'reviews/add_review.html'
     context = {
@@ -49,7 +50,7 @@ def edit_review(request, pk):
     
     review = get_object_or_404(Reviews, id=pk)
     if request.method == 'POST':
-        form = ReviewsForm(request.POST, request.FILES, instance=review)
+        form = ReviewsForm(request.POST, request.FILES,)
         if form.is_valid():
             form.save()
             messages.success(request, 'Successfully updated your review, waiting for approval.')
@@ -66,3 +67,16 @@ def edit_review(request, pk):
     }
 
     return render(request, template, context)
+
+
+@login_required
+def delete_review(request, pk):
+    """ Delete a review """
+    if not request.user:
+        messages.error(request, 'Sorry, you need an account to delete a review')
+        return redirect(reverse('reviews'))
+
+    review = get_object_or_404(Reviews, id=pk)
+    review.delete()
+    messages.success(request, 'Review deleted!')
+    return redirect(reverse('reviews'))

@@ -16,8 +16,12 @@
             <div class="col-12 text-center">
                 <hr>
                 <h2 class="logo-font mb-4">Customer Reviews</h2>
-                {% if user.is_authenticated %}
-                    <h6 class="text-muted">Want to add a review? Click Here</h5>
+                {% if request.user.is_authenticated %}
+                    <h6 class="text-muted">Want to add a review?
+                        <small class="ml-3">
+                            <a href="{% url 'add_review' %}">Add Review</a>
+                        </small>
+                    </h6>
                 {% else %}
                     <h6 class="text-muted">You need to login or register to write a review: <a href="{% url 'profile' %}">My Account</a></h5>
                 {% endif %}
@@ -72,6 +76,12 @@
                 <img class="review-image img-fluid mt-3 card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ review.review_title }} Review Image">
             {% endif %}
         </div>
+        {% if request.user.is_authenticated and user.username == review.name or user.is_superuser %}
+        <div>
+            <a class="btn-sm btn btn-outline-success" href="{% url 'edit_review' review.id %}" role="button">Edit</a> |
+            <a class="btn-sm btn btn-outline-danger" href="{% url 'delete_review' review.id %}" role="button">Delete</a>
+        </div>
+        {% endif %}
         <hr>
         <!-- END of Star Rating if statement -->
     </div>

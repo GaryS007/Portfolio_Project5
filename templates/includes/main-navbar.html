@@ -4,7 +4,7 @@
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-links">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                 <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
@@ -16,7 +16,7 @@
             <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Acoustic Drums
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+            <div class="dropdown-menu border-0" aria-labelledby="all-acoustic-drums-links">
                 <a href="{% url 'products' %}?category=acoustic-drumkits" class="dropdown-item">Drumkits</a>
                 <a href="{% url 'products' %}?category=snare-drums" class="dropdown-item ">Snare Drums</a>
                 <a href="{% url 'products' %}?category=cymbals" class="dropdown-item ">Cymbals</a>
@@ -26,10 +26,10 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-electric-drums-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Electric Drums
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-links">
                 <a href="{% url 'products' %}?category=electronic-drumkits" class="dropdown-item">Electronic Drumkits</a>
                 <a href="{% url 'products' %}?category=drum-modules" class="dropdown-item ">Electronic Drum Modules</a>
                 <a href="{% url 'products' %}?category=electronic-drum-pads" class="dropdown-item ">Electronic Drum Pads</a>
@@ -38,13 +38,23 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'products' %}?special_offers=clearance,b-stock" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Special Offers
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
+            <div class="dropdown-menu border-0" aria-labelledby="all-specials-links">
                 <a href="{% url 'products' %}?special_offers=clearance" class="dropdown-item">Clearance</a>
                 <a href="{% url 'products' %}?special_offers=b-stock" class="dropdown-item ">B Stock</a>
                 <a href="{% url 'products' %}?special_offers=clearance,b-stock" class="dropdown-item">All Specials</a>
+            </div>
+        </li>
+
+        <li class="nav-item dropdown">
+            <a class="logo-font font-weight-bold nav-link text-black mr-5" href="{% url 'reviews' %}" id="reviews-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Customer Reviews
+            </a>
+            <div class="dropdown-menu border-0" aria-labelledby="all-reviews-links">
+                <a href="{% url 'reviews' %}" class="dropdown-item">All Reviews</a>
+                <a href="{% url 'add_review' %}" class="dropdown-item">Add Review</a>
             </div>
         </li>
     </ul>
