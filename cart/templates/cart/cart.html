@@ -50,13 +50,22 @@
                                         <p class="my-0 small text-muted">SKU: {{ item.product.sku|upper }}</p>
                                     </td>
                                     <td class="py-3">
-                                        <p class"my-0">${{ item.product.price }}</p>
+                                        {% if item.product.on_sale %}
+                                        <p class="my-0"><strike>${{ item.product.price }}</strike></p>
+                                        <p class="my-0 large-text text-success">${{ item.product.sale_price }}</p>
+                                        {% else %}
+                                        <p class="my-0">${{ item.product.price }}</p>
+                                        {% endif %}
                                     </td>
                                     <td class="py-3">
                                         {% include 'cart/quantity-form.html' %}                               
                                     </td>
                                     <td class="py-3">
+                                        {% if item.product.on_sale %}
+                                        <p class"my-0">${{ item.product.sale_price | calc_subtotal:item.quantity }}</p>
+                                        {% else %}
                                         <p class"my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                        {% endif %}
                                     </td>
                                 </tr>
                             {% endfor %}

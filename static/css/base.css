@@ -31,8 +31,9 @@ body {
     color: #ff5e14;
 }
 
-.text-green {
-    color: #00FF00;
+.large-text {
+    font-size: 1.25rem !important;
+    font-weight: 900;
 }
 
 /* Buttons */
@@ -131,6 +132,12 @@ input [name='q']::placeholder {
 .sale {
     top: 1rem;
     right: 1rem;
+}
+
+/* Form Control */
+
+.form-control-sm {
+    padding: 0.05rem 0.05rem !important;
 }
 
 /* Navbar/Header & Menu Items */
