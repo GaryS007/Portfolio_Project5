@@ -27,16 +27,20 @@ body {
     width: fit-content;
 }
 
+.text-orange {
+    color: #ff5e14;
+}
+
 /* Buttons */
 
 .shop-now-button {
-    background: #23a1d1;
+    background: #ff5e14;
     color: white;
     min-width: 260px;
 }
 
 .btn-black {
-    background: #23a1d1;
+    background: #ff5e14;
     color: white;
 }
 
@@ -49,7 +53,7 @@ body {
 .btn-outline-black:hover,
 .btn-outline-black:active,
 .btn-outline-black:focus {
-    background: #23a1d1;
+    background: #ff5e14;
     color: white !important;
 }
 
@@ -81,6 +85,10 @@ body {
     background: #23a1d1 !important;
 }
 
+.bg-orange {
+    background: #ff5e14 !important;
+}
+
 /* Products Page */
 
 .overlay {
@@ -94,7 +102,7 @@ body {
 }
 
 a.category-badge>span.badge:hover {
-    background: #23a1d1 !important;
+    background: #ff5e14 !important;
     color: #fff !important;
 }
 
@@ -117,6 +125,10 @@ input [name='q']::placeholder {
 }
 
 /* Navbar/Header & Menu Items */
+
+.navbar-toggler {
+    background-color: white !important;
+}
 
 .color-darkgrey {
     background: #262626 !important;
@@ -184,7 +196,7 @@ input [name='q']::placeholder {
 }
 
 .wrap .fa {
-    color: white;
+    color: #ff5e14;
     position: absolute;
     right: 17px;
     top: 15px;
@@ -355,6 +367,8 @@ ul {
 .footer-section {
     background: #262626;
     position: relative;
+    bottom: 0;
+    width: 100%;
 }
 
 .footer-cta {

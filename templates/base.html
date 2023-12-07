@@ -7,7 +7,7 @@
     <div id="topnav" class="row bg-white color-darkgrey pt-lg-2 d-none d-lg-flex">
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 text-center text-lg-left">
         <a href="{% url 'home' %}" class="nav-link main-logo-link">
-          <h2 class="logo-font text-white my-0"><strong>Drum</strong> Loot</h2>
+          <h2 class="logo-font text-white my-0"><strong class="text-orange">Drum</strong> Loot</h2>
         </a>
       </div>
       <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 flex-shrink-1">
@@ -23,7 +23,7 @@
           <li class="list-inline-item dropdown">
             <a class="text-white nav-link" href="#" id="user-options" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
               <div class="text-center">
-                <div><i class="fas fa-user fa-lg"></i></div>
+                <div><i class="fas fa-user fa-lg text-orange"></i></div>
                 <p class="my-0">My Account</p>
               </div>
             </a>
@@ -43,7 +43,7 @@
           <li class="list-inline-item">
             <a class="{% if grand_total %}text-info font-weight-bold{% else %}text-white{% endif %} nav-link" href="{% url 'view_cart' %}">
               <div class="text-center">
-                <div><i class="fas fa-shopping-bag fa-lg"></i></div>
+                <div><i class="fas fa-shopping-bag fa-lg text-orange"></i></div>
                   <p class="my-0">
                     {% if grand_total %}
                       ${{ grand_total|floatformat:2 }}
@@ -71,7 +71,7 @@
       </nav>
     </div>
     <div id="delivery-banner" class="row text-center">
-      <div class="col bg-blue text-white">
+      <div class="col bg-orange text-white">
         <h4 class="logo-font my-1">Free delivery on orders over ${{ free_delivery_threshold }}!</h4>
       </div>
     </div>
