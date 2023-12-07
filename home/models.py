@@ -3,6 +3,8 @@ from django.db import models
 
 class ContactUs(models.Model):
     """ Defines the Contact Us Model """
+    class Meta:
+        verbose_name_plural = "Contact Us"
     email = models.EmailField(blank=True)
     name = models.CharField(max_length=80, blank=True)
     message = models.TextField(blank=True)

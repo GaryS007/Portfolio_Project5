@@ -31,6 +31,10 @@ body {
     color: #ff5e14;
 }
 
+.text-green {
+    color: #00FF00;
+}
+
 /* Buttons */
 
 .shop-now-button {
@@ -122,6 +126,11 @@ a.category-badge>span.badge:hover {
 
 input [name='q']::placeholder {
     color: #aab7c4;
+}
+
+.sale {
+    top: 1rem;
+    right: 1rem;
 }
 
 /* Navbar/Header & Menu Items */
@@ -471,10 +480,10 @@ ul {
 }
 
 .footer-widget ul li {
-    display: inline-block;
     float: left;
     width: 50%;
     margin-bottom: 12px;
+    list-style-type: none;
 }
 
 .footer-widget ul li a:hover {

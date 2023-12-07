@@ -44,11 +44,14 @@ class Product(models.Model):
     product_dimensions = models.TextField(blank=True)
     additional_description = models.TextField(blank=True)
     price = models.DecimalField(max_digits=6, decimal_places=2)
-    previous_price = models.DecimalField(default=0, max_digits=6, decimal_places=2)
     rating = models.DecimalField(max_digits=6, decimal_places=2, null=True, blank=True)
     image_url = models.URLField(max_length=1024, null=True, blank=True)
     image = models.ImageField(upload_to="product_images/", null=True, blank=True)
+    # Product Sales
+    on_sale = models.BooleanField(default=False)
+    sale_price = models.DecimalField(default=0, max_digits=6, decimal_places=2)
     out_of_stock = models.BooleanField(default=False)
+    b_stock = models.BooleanField(default=False)
     new_product = models.BooleanField(default=False)
     special_offers = models.ForeignKey(
         "SpecialOffers", null="True", blank=True, on_delete=models.SET_NULL

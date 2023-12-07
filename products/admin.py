@@ -12,11 +12,13 @@ class ProductAdmin(SummernoteModelAdmin):
         "name",
         "category",
         "price",
-        "previous_price",
+        "sale_price",
+        "on_sale",
         "rating",
         "out_of_stock",
         "new_product",
         "special_offers",
+        "b_stock",
     )
     summernote_fields = "description, product_dimensions, additional_description"
 
