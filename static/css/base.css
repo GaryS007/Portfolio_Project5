@@ -553,6 +553,16 @@ ul {
     color: #878787;
 }
 
+/* Contact Page */
+
+.googlemap-responsive {
+    padding-bottom: 15px;
+}
+
+.map {
+    text-align: center;
+}
+
 /* ----- Media Queries ----- */
 
 /* Slightly larger container on xl screens */
@@ -585,5 +595,24 @@ ul {
 
     body {
         height: calc(100vh - 116px);
+    }
+}
+
+@media (max-width: 800x) {
+
+    .contact-1 {
+        order: 1;
+    }
+
+    .contact-2 {
+        order: 3;
+    }
+
+    .contact-3 {
+        order: 2;
+    }
+
+    .contact-4 {
+        order: 4;
     }
 }

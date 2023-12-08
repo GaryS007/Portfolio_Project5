@@ -6,7 +6,7 @@ class ContactUsForm(forms.ModelForm):
     """ Creates field for ContactEnquiry form """
     class Meta:
         model = ContactUs
-        fields = ('name', 'email', 'subject', 'message',)
+        fields = ('__all__')
         """
         Labels replace the default labels for forms.
         """

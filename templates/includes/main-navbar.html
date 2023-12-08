@@ -50,9 +50,10 @@
 
         <li class="nav-item dropdown">
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'reviews' %}" id="reviews-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Customer Reviews
+                Contact | Reviews
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-reviews-links">
+                <a href="{% url 'contact' %}" class="dropdown-item">Contact Us</a>
                 <a href="{% url 'reviews' %}" class="dropdown-item">All Reviews</a>
                 <a href="{% url 'add_review' %}" class="dropdown-item">Add Review</a>
             </div>
