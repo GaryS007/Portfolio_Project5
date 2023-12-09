@@ -22,6 +22,11 @@
                         <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
                     </a>
                 {% endfor %}
+                {% for c in current_special_offers %}
+                    <a class="category-badge text-decoration-none" href="{% url 'products' %}?special_offers={{ c.name }}">
+                        <span class="p-2 mt-2 badge badge-white text-black rounded-0 border border-dark">{{ c.friendly_name }}</span>
+                    </a>
+                {% endfor %}
                 <hr class="w-50 mb-1">
             </div>
         </div>
@@ -45,7 +50,7 @@
                     </div>
                     <div class="col-12 col-md-6 order-md-first">
                         <p class="text-muted mt-3 text-center text-md-left">
-                            {% if search_term or current_categories or current_sorting != 'None_None' %}
+                            {% if search_term or current_categories or current_sorting or current_special_offers != 'None_None' %}
                                 <span class="small"><a href="{% url 'products' %}">Products Home</a> | </span>
                             {% endif %}
                             {{ products|length }} Products{% if search_term %} found for <strong>"{{ search_term }}"</strong>{% endif %}
@@ -72,7 +77,7 @@
                                     </a>
                                 {% endif %}
                                 <div class="card-body pb-0">
-                                    <p class="mb-0">{{ product.name }}</p>
+                                    <p class="mb-0 font-weight-bold">{{ product.name }}</p>
                                 </div>
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
@@ -80,26 +85,59 @@
                                             <p class="lead mb-0 text-left fw-light"><strike class="text-orange">${{ product.price }}</strike>
                                                 <span class="lead mb-0 text-left font-weight-bold">${{ product.sale_price }}</span>
                                             </p>
-                                            <!-- Check for product category -->
+                                            <!-- Check for product category and add tag -->
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
-                                                    <i class="fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
+                                                    <i class="text-orange fas fa-tag mr-1"></i>{{ product.category.friendly_name }}
                                                 </a>
                                             </p>
                                             {% endif %}
+                                            <!-- Check for Special Offers and add tag -->
+                                            {% if product.special_offers %}
+                                                <p class="small mt-1 mb-0">
+                                                    <a class="text-muted" href="{% url 'products' %}?special_offers={{ product.special_offers.name }}">
+                                                        <i class="text-orange fas fa-tag mr-1"></i>{{ product.special_offers.friendly_name }}
+                                                    </a>
+                                                </p>
+                                            {% endif %}
                                             <!-- Check for product rating -->
                                             {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                                <small class="text-muted"><i class="gold fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
                                             <!-- Check for Admin to allow edit/delete products -->
-                                            {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
+                                             <!-- Check for Admin to allow edit/delete products -->
+                                             {% if request.user.is_superuser %}
+                                                <div class="mt-2 text-left">
+                                                    <small class="ml-3">
+                                                        <a class="btn btn-black rounded-0 text-uppercase mt-1" href="{% url 'edit_product' product.id %}">Edit</a> |
+                                                        <a class="btn-delete btn rounded-0 text-uppercase btn-outline-danger mt-1" data-toggle="modal" data-target="#deleteProductModal" role="button" data-whatever="{{ product.id }}">Delete</a>
+                                                    </small>
+                                                </div>
+                                                <!-- Delete Product Bootstrap Modal -->
+                                                <div class="modal fade" id="deleteProductModal" tabindex="-1" role="dialog" aria-labelledby="deleteProductLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                        <h5 class="modal-title" id="deleteProductLabel">Delete Review</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                        Are you sure you want to <strong class="text-danger">DELETE</strong> this Product?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <a type="button" class="btn btn-secondary" href="{% url 'delete_product' product.id %}">
+                                                        Delete Product
+                                                        </a>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -155,16 +193,49 @@
                                                 </a>
                                             </p>
                                             {% endif %}
+                                            <!-- Check for Special Offers and add tag -->
+                                            {% if product.special_offers %}
+                                                <p class="small mt-1 mb-0">
+                                                    <a class="text-muted" href="{% url 'products' %}?special_offers={{ product.special_offers.name }}">
+                                                        <i class="text-orange fas fa-tag mr-1"></i>{{ product.special_offers.friendly_name }}
+                                                    </a>
+                                                </p>
+                                            {% endif %}
                                             {% if product.rating %}
-                                                <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                                <small class="text-muted"><i class="gold fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
                                             {% else %}
                                                 <small class="text-muted">No Rating</small>
                                             {% endif %}
+                                            <!-- Check for Admin to allow edit/delete products -->
                                             {% if request.user.is_superuser %}
-                                                <small class="ml-3">
-                                                    <a href="{% url 'edit_product' product.id %}">Edit</a> |
-                                                    <a class="text-danger" href="{% url 'delete_product' product.id %}">Delete</a>
-                                                </small>
+                                                <div class="mt-2 text-left">
+                                                    <small class="ml-3">
+                                                        <a class="btn btn-black rounded-0 text-uppercase mt-1" href="{% url 'edit_product' product.id %}">Edit</a> |
+                                                        <a class="btn-delete btn rounded-0 text-uppercase btn-outline-danger mt-1" data-toggle="modal" data-target="#deleteProductModal" role="button" data-whatever="{{ product.id }}">Delete</a>
+                                                    </small>
+                                                </div>
+                                                 <!-- Delete Product Bootstrap Modal -->
+                                                 <div class="modal fade" id="deleteProductModal" tabindex="-1" role="dialog" aria-labelledby="deleteProductLabel" aria-hidden="true">
+                                                    <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                        <h5 class="modal-title" id="deleteProductLabel">Delete Review</h5>
+                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                            <span aria-hidden="true">&times;</span>
+                                                        </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                        Are you sure you want to <strong class="text-danger">DELETE</strong> this Product?
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <a type="button" class="btn btn-danger" href="{% url 'delete_product' product.id %}">
+                                                        Delete Product
+                                                        </a>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
                                             {% endif %}
                                         </div>
                                     </div>
@@ -201,7 +272,7 @@
     </div>
     <div class="btt-button shadow-sm rounded-0 border border-black">
         <a class="btt-link d-flex h-100">
-            <i class="fas fa-arrow-up text-black mx-auto my-auto"></i>
+            <i class="fas fa-arrow-up text-orange mx-auto my-auto"></i>
         </a>
     </div>
     <!-- End of Products Section -->

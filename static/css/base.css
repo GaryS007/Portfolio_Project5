@@ -86,15 +86,15 @@ body {
     border: 1px solid black !important;
 }
 
-.bg-blue {
-    background: #23a1d1 !important;
-}
-
 .bg-orange {
     background: #ff5e14 !important;
 }
 
 /* Products Page */
+
+.gold {
+    color: gold !important;
+}
 
 .overlay {
     height: 100%;

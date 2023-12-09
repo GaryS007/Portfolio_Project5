@@ -16,6 +16,7 @@ def all_products(request):
     categories = None
     sort = None
     direction = None
+    special_offers = None
 
     if request.GET:
         if 'sort' in request.GET:
@@ -26,7 +27,8 @@ def all_products(request):
                 products = products.annotate(lower_name=Lower('name'))
             if sortkey == 'category':
                 sortkey = 'category__name'
-
+            if sortkey == 'special_offers':
+                sortkey = 'special_offers__name'
             if 'direction' in request.GET:
                 direction = request.GET['direction']
                 if direction == 'desc':
@@ -38,10 +40,10 @@ def all_products(request):
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
     
-        if "special_offers" in request.GET:
-            speical_offers = request.GET["special_offers"].split(",")
+        if 'special_offers' in request.GET:
+            special_offers = request.GET['special_offers'].split(',')
             products = products.filter(special_offers__name__in=special_offers)
-            special_offers = (SpecialOffers.objects.filter(name__in=special_offers))
+            special_offers = SpecialOffers.objects.filter(name__in=special_offers)
 
     if request.GET:
         if 'q' in request.GET:
@@ -60,6 +62,7 @@ def all_products(request):
         'search_term': query,
         'current_categories': categories,
         'current_sorting': current_sorting,
+        'current_special_offers': special_offers,
     }
 
     return render(request, 'products/products.html', context)

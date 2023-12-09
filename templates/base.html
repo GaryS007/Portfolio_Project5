@@ -10,11 +10,17 @@
           <h2 class="logo-font text-white my-0"><strong class="text-orange">Drum</strong> Loot</h2>
         </a>
       </div>
-      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0 flex-shrink-1">
+      <div class="col-12 col-lg-4 my-auto py-1 py-lg-0">
         <form method="GET" action="{% url 'products' %}">
-          <div class="wrap">
-            <input type="text" class="input" placeholder="Search our store">
-            <i class="fa fa-search" aria-hidden="true"></i>
+          <div class="input-group w-100">
+            <input class="form-control border border-black rounded-0" type="text" name="q" placeholder="Search our store">
+            <div class="input-group-append">
+              <button class="form-control btn btn-black border border-black rounded-0" type="submit">
+                <span class="icon">
+                  <i class="fas fa-search"></i>
+                </span>
+              </button>
+            </div>
           </div>
         </form>
       </div>

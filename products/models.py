@@ -1,3 +1,4 @@
+import uuid
 from django.db import models
 
 
@@ -54,8 +55,24 @@ class Product(models.Model):
     b_stock = models.BooleanField(default=False)
     new_product = models.BooleanField(default=False)
     special_offers = models.ForeignKey(
-        "SpecialOffers", null="True", blank=True, on_delete=models.SET_NULL
+        'SpecialOffers', null=True, blank=True, on_delete=models.SET_NULL
     )
 
     def __str__(self):
         return self.name
+
+    def _generate_sku(self):
+        """Generate a random, unique SKU using UUID"""
+        return uuid.uuid4().hex.upper()
+    
+    def save(self, *args, **kwargs):
+        """
+        Override the original save method to set the SKU number
+        if it hasn't been set already.
+        """
+        if not self.sku:
+            self.sku = self._generate_sku()
+        super().save(*args, **kwargs)
+    
+    def __str__(self):
+        return self.sku

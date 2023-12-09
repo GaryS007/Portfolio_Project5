@@ -21,10 +21,10 @@ def contact_us(request):
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
         if form.is_valid():
-            name = request.POST['name']
-            message = request.POST['message']
-            subject = request.POST['subject']
-            email = request.POST['email']
+            name = form.cleaned_data['name']
+            message = form.cleaned_data ['message']
+            subject = form.cleaned_data ['subject']
+            email = form.cleaned_data ['email']
             form.save()
             messages.success(request, 'Message successfully submitted')
             return redirect(reverse('contact'))
