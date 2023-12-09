@@ -31,9 +31,9 @@
     </div>
     {% for review in list_reviews %}
     <div class="container col-12">
-        <p><strong>{{ review.review_title}}</strong></p>
+        <p><strong><i class="fa-solid fa-quote-left"></i> {{ review.review_title}} <i class="fa-solid fa-quote-right"></i></strong></p>
         <p class="review-text text-muted">by: <strong>{{ review.review_name }}</strong></p>
-        <p>{{ review.review_text }}</p>
+        <p><i class="fa-solid fa-quote-left"></i> {{ review.review_text }} <i class="fa-solid fa-quote-right"></i></p>
         <p class="text-muted review-text">Posted on: {{ review.updated_on }}</p>
         <span id="review-rating">
             <!-- Star Rating if statement -->

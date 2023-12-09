@@ -1,0 +1,81 @@
+{% load static %}
+{% block content %}
+<hr>
+    <h2 class="logo-font mb-4">Special Offers</h2>
+<hr>
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-12 m-auto">
+                <div class="owl-carousel owl-theme">
+                    {% for product in special_offers %}
+                    <p>HELLO</p>
+                        <div class="card card-owl h-100 border-0">
+                            {% if product.image %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid w-75 product-img" src="{{ product.image.url }}" alt="{{ product.name }} Image">
+                            </a>
+                            {% else %}
+                            <a href="{% url 'product_detail' product.id %}">
+                                <img class="card-img-top img-fluid w-75 product-img" src="{{ MEDIA_URL }}noimage.png" alt="{{ product.name }} Image">
+                            </a>
+                            {% endif %}
+                            <div class="card-body pb-0">
+                                <p class="mb-0">{{ product.name }}</p>
+                            </div>
+                            <div class="card-footer bg-white pt-0 border-0 text-left">
+                                <div class="row">
+                                    <div class="col">
+                                        <p class="lead mb-0 text-left font-weight-bold text-success">€{{ product.price }}</p>
+
+                                        <p class="lead mb-0 text-left font-weight-bold">€{{ product.price }}</p>
+
+                                        {% if product.category %}
+                                        <p class="small mt-1 mb-0">
+                                            <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name | urlencode }}">
+                                                <i class="fa regular fa-clock interactive-color"></i> {{ product.category.friendly_name }}
+                                            </a>
+                                        </p>
+                                        {% endif %}
+
+                                        {% if product.rating %}
+                                            <small class="text-muted"><i class="fas fa-star mr-1"></i>{{ product.rating }} / 5</small>
+                                        {% else %}
+                                            <small class="text-muted">No Rating</small>
+                                        {% endif %}
+                                        <div>
+                                            <a href="{% url 'product_detail' product.id %}" class="btn btn-outline-black rounded-0 mt-2 bg-warning">Buy Now</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
+{% block postloadjs %}
+    <script type="text/javascript">
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+        
+            nav: true,
+            autoplay: true,
+            autoPlaySpeed: 5000,
+            autoPlayTimeout: 5000,
+            autoplayHoverPause: true,
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 2
+                },
+                1000: {
+                    items: 3
+                }
+            }
+        });
+    </script>
+{% endblock %}

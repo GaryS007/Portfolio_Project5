@@ -15,3 +15,12 @@ class ReviewsAdmin(SummernoteModelAdmin):
         "approved",
     )
     summernote_fields = "review_text"
+
+    actions = ['approve_reviews']
+
+    def approve_reviews(self, request, queryset):
+        """
+        Adds approval action to drop-down list
+        """
+        queryset.update(approved=True)
+

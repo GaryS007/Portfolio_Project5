@@ -92,6 +92,14 @@ body {
 
 /* Products Page */
 
+.card-header {
+    background-color: #ff5e14 !important;
+}
+
+.btn-link {
+    color: white !important;
+}
+
 .gold {
     color: gold !important;
 }
