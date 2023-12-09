@@ -29,6 +29,7 @@
                     {% if field.name != 'image' %}
                         {{ field | as_crispy_field }}
                     {% else %}
+                        <p><strong>Share an Image with your review!</strong></p>
                         {{ field }}
                     {% endif %}
                 {% endfor %}

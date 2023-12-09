@@ -20,6 +20,7 @@ class Reviews(models.Model):
         null=True)
     image = models.ImageField(upload_to="reviews_images/", null=True, blank=True)
     approved = models.BooleanField(default=False)
+    review_name = models.CharField(max_length=100, null=True)
 
     def __str__(self):
         return self.name

@@ -7,6 +7,8 @@ from django_summernote.admin import SummernoteModelAdmin
 class ReviewsAdmin(SummernoteModelAdmin):
     """Displays reviews in django admin"""
     list_display = (
+        "name",
+        "review_name",
         "review_title",
         "updated_on",
         "review_rating",

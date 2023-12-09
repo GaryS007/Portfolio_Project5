@@ -32,7 +32,7 @@
     {% for review in list_reviews %}
     <div class="container col-12">
         <p><strong>{{ review.review_title}}</strong></p>
-        <p class="review-text text-muted">by: <strong>{{ review.name }}</strong></p>
+        <p class="review-text text-muted">by: <strong>{{ review.review_name }}</strong></p>
         <p>{{ review.review_text }}</p>
         <p class="text-muted review-text">Posted on: {{ review.updated_on }}</p>
         <span id="review-rating">
@@ -73,8 +73,6 @@
         <div>
             {% if review.image %}
                 <img class="review-image img-fluid mt-3 card-img-top" src="{{ review.image.url }}" alt="{{ review.review_title }} Review Image">
-            {% else %}
-                <img class="review-image img-fluid mt-3 card-img-top" src="{{ MEDIA_URL }}noimage.png" alt="{{ review.review_title }} Review Image">
             {% endif %}
         </div>
         {% if request.user.is_authenticated and user.username == review.name or user.is_superuser %}
