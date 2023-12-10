@@ -1,0 +1,1 @@
+web: gunicorn drum_loot.wsgi:application
