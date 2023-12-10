@@ -23,4 +23,3 @@ class ReviewsAdmin(SummernoteModelAdmin):
         Adds approval action to drop-down list
         """
         queryset.update(approved=True)
-

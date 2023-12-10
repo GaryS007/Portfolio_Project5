@@ -35,6 +35,11 @@
                     {% else %}
                     <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
                     {% endif %}
+                    {% if product.new_product %}
+                        <p class="small mt-1 mb-0">
+                            <i class="text-orange fa-solid fa-thumbs-up"></i> New Product Just In!
+                        </p>
+                    {% endif %}
                     {% if product.category %}
                     <p class="small mt-1 mb-0">
                         <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">
@@ -122,7 +127,12 @@
                                     </span>
                                     <span class="text-uppercase">Continue Shopping</span>
                                 </a>
-                                <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Cart">
+                                {% if product.out_of_stock %}
+                                    <img class="w-25" src="{{ MEDIA_URL }}out-of-stock.png" alt="{{ product.name }}">
+                                    <p class="pt-3">We aim to have all products restocked soon. Check back later.</p>
+                                {% else %}
+                                    <input type="submit" class="btn btn-black rounded-0 text-uppercase mt-5" value="Add to Cart">
+                                {% endif %}
                             </div>
                             <input type="hidden" name="redirect_url" value="{{ request.path }}">
                         </div>

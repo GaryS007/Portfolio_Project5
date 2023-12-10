@@ -85,6 +85,11 @@
         {% endif %}
         <hr>
     </div>
+    <div>
+        {% if profile.image %}
+            <img class="profile-image img-fluid mt-3 card-img-top" src="{{ profile.image.url }}" alt="{{ review.name }} Profile Pic">
+        {% endif %}
+    </div>
     <!-- Modal -->
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">

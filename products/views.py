@@ -39,7 +39,7 @@ def all_products(request):
             categories = request.GET['category'].split(',')
             products = products.filter(category__name__in=categories)
             categories = Category.objects.filter(name__in=categories)
-    
+
         if 'special_offers' in request.GET:
             special_offers = request.GET['special_offers'].split(',')
             products = products.filter(special_offers__name__in=special_offers)
@@ -51,7 +51,7 @@ def all_products(request):
             if not query:
                 messages.error(request, "You didn't enter a search criteria")
                 return redirect(reverse('products'))
-            
+
             queries = Q(name__icontains=query) | Q(description__icontains=query)
             products = products.filter(queries)
 
@@ -75,7 +75,7 @@ def product_detail(request, product_id):
 
     product = get_object_or_404(Product, pk=product_id)
 
-    context = { 
+    context = {
         'product': product,
     }
 

@@ -569,6 +569,7 @@ ul {
 
 .map {
     text-align: center;
+    width: 50%;
 }
 
 /* ----- Media Queries ----- */
@@ -606,7 +607,8 @@ ul {
     }
 }
 
-@media (max-width: 800x) {
+
+@media (max-width: 767px) {
 
     .contact-1 {
         order: 1;

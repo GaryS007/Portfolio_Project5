@@ -9,7 +9,6 @@ from profiles.models import UserProfile
 
 def reviews(request):
     """ renders reviews page """
-
     list_reviews = (
         Reviews.objects.all().filter(approved=True).order_by("-updated_on"))
     return render(request, "reviews/reviews.html", {"list_reviews": list_reviews})
@@ -21,7 +20,7 @@ def add_review(request):
     if not request.user:
         messages.error(request, 'Sorry, you must login to do that.')
         return redirect(reverse('reviews'))
-    
+
     if request.method == 'POST':
         form = ReviewsForm(request.POST, request.FILES,)
         if form.is_valid():

@@ -18,7 +18,6 @@ class ProductAdmin(SummernoteModelAdmin):
         "rating",
         "out_of_stock",
         "new_product",
-        "b_stock",
     )
     summernote_fields = "description, product_dimensions, additional_description"
 

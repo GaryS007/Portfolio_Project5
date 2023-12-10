@@ -1,50 +1,55 @@
-{% extends "base.html" %}
-{% load static %}
-
-{% block page_header %}
-    <div class="container header-container">
-        <div class="row">
-            <div class="col"></div>
-        </div>
-    </div>
-{% endblock %}
-
-{% block content %}
+{% extends "base.html" %} {% load static %} {% block page_header %}
+<div class="container header-container">
+  <div class="row">
+    <div class="col"></div>
+  </div>
+</div>
+{% endblock %} {% block content %}
 <div class="overlay"></div>
 <div class="container">
-    <div class="row">
-        <div class="col-12 col-md-6 contact-1">
-            <hr>
-            <h2 class="logo-font mb-4 text-center">Contact Drum Loot</h2>
-            <h5 class="text-muted text-center">Complete our Contact Form below!</h5>
-            <hr>
-        </div>
-        <div class="col-12 col-md-6 contact-2">
-            <hr>
-            <h2 class="logo-font mb-4 text-center ">Contact Information</h2>
-            <h5 class="text-muted text-center">Open 9am-5pm all week!</h5>
-            <hr>
-        </div>
-        <div class="w-100 d-none d-md-block"></div>
-        <div class="col-12 col-md-6 contact-3">
-            <form method="POST" href="#" class="form mb-2" enctype="multipart/form-data">
-                {% csrf_token %}
-                {% for field in form %}
-                    {{ field | as_crispy_field }}
-                {% endfor %}
-                    <button class="btn btn-black rounded-0" type="submit">Submit  <i class="fab fa-telegram-plane pl-2"></i></button>
-            </form>
-        </div>
-        <div class="col-12 col-md-6 text-center contact-4">
-            <h5>Email: info@drumloot.com</h5>
-            <h5>Phone: 045 948 4590</h5>
-            <h5>Address: 105 Tilted Towers, California, USA</h5>
-            <div id="map">
-            <iframe class="googlemap-responsive" 
-            src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3152.1982920890246!2d-122.28525490832737!3d37.80882413795131!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMzfCsDQ4JzMxLjgiTiAxMjLCsDE2JzQ5LjQiVw!5e0!3m2!1sen!2sie!4v1702042781451!5m2!1sen!2sie" 
-            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-            </div>
-        </div>
+  <div class="row">
+    <div class="col-12 col-md-6 contact-1">
+      <hr />
+      <h2 class="logo-font mb-4 text-center">Contact Drum Loot</h2>
+      <h5 class="text-muted text-center">Complete our Contact Form below!</h5>
+      <hr />
     </div>
+    <div class="col-12 col-md-6 contact-2">
+      <hr />
+      <h2 class="logo-font mb-4 text-center">Contact Information</h2>
+      <h5 class="text-muted text-center">Open 9am-5pm all week!</h5>
+      <hr />
+    </div>
+    <div class="w-100 d-none d-md-block"></div>
+    <div class="col-12 col-md-6 contact-3">
+      <form
+        method="POST"
+        href="#"
+        class="form mb-2"
+        enctype="multipart/form-data"
+      >
+        {% csrf_token %} {% for field in form %} {{ field | as_crispy_field }}
+        {% endfor %}
+        <button class="btn btn-black rounded-0" type="submit">
+          Submit <i class="fab fa-telegram-plane pl-2"></i>
+        </button>
+      </form>
+    </div>
+    <div class="col-12 col-md-6 text-center contact-4">
+      <div class="bg-orange">
+        <p>
+          We're open 7 days a week, contact us via our details below. Want to
+          come in and check out some of our equipment, feel free to drop around,
+          no need to call in advance.
+        </p>
+        <h5>Email:</h5>
+        <p>info@drumloot.com</p>
+        <h5>Phone:</h5>
+        <p>045 948 4590</p>
+        <h5>Address:</h5>
+        <p>105 Tilted Towers, California, USA</p>
+      </div>
+    </div>
+  </div>
 </div>
 {% endblock %}

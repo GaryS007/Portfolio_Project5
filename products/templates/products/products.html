@@ -85,6 +85,16 @@
                                             <p class="lead mb-0 text-left fw-light"><strike class="text-orange">${{ product.price }}</strike>
                                                 <span class="lead mb-0 text-left font-weight-bold">${{ product.sale_price }}</span>
                                             </p>
+                                            {% if product.out_of_stock %}
+                                            <p class="small mt-1 mb-0">
+                                                <img class="w-25" src="{{ MEDIA_URL }}out-of-stock.png" alt="{{ product.name }}">
+                                            </p>
+                                            {% endif %}
+                                            {% if product.new_product %}
+                                            <p class="small mt-1 mb-0">
+                                                <i class="text-orange fa-solid fa-thumbs-up"></i> New Product Just In!
+                                            </p>
+                                            {% endif %}
                                             <!-- Check for product category and add tag -->
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
@@ -186,6 +196,16 @@
                                     <div class="row">
                                         <div class="col">
                                             <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>
+                                            {% if product.out_of_stock %}
+                                            <p class="small mt-1 mb-0">
+                                                <img class="w-25" src="{{ MEDIA_URL }}out-of-stock.png" alt="{{ product.name }}">
+                                            </p>
+                                            {% endif %}
+                                            {% if product.new_product %}
+                                            <p class="small mt-1 mb-0">
+                                                <i class="text-orange fa-solid fa-thumbs-up"></i> New Product Just In!
+                                            </p>
+                                            {% endif %}
                                             {% if product.category %}
                                             <p class="small mt-1 mb-0">
                                                 <a class="text-muted" href="{% url 'products' %}?category={{ product.category.name }}">

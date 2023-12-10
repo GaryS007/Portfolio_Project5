@@ -1,11 +1,8 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render
 from django.core.mail import send_mail
-from .models import ContactUs
-from .forms import ContactUsForm
 from django.contrib import messages
+from .forms import ContactUsForm
 
-
-# Create your views here.
 
 def index(request):
     """ 
@@ -21,13 +18,11 @@ def contact_us(request):
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
         if form.is_valid():
-            name = form.cleaned_data['name']
-            message = form.cleaned_data ['message']
             subject = form.cleaned_data ['subject']
+            message = form.cleaned_data['message']
             email = form.cleaned_data ['email']
             form.save()
             messages.success(request, 'Message successfully submitted')
-            return redirect(reverse('contact'))
             try:
                 send_mail(
                     subject=subject,
@@ -42,6 +37,7 @@ def contact_us(request):
                     message='Thank you for your email\
                         Someone will be in touch with you soon.',
                     from_email=email,
+                    recipient_list=[email]
                 )
             except ImportError:
                 message.error(request, 'There was an error sending your message.')

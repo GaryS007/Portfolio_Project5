@@ -51,10 +51,14 @@ INSTALLED_APPS = [
     'checkout',
     'profiles',
     'reviews',
-    
+
     # Other
     'django_summernote',
     'crispy_forms',
+]
+
+INTERNAL_IPS = [
+    '127.0.0.1'
 ]
 
 MIDDLEWARE = [

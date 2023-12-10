@@ -1,8 +1,6 @@
 from django.db import models
-from django.contrib.auth.models import User
 from django.urls import reverse
 from django.core.validators import MinValueValidator, MaxValueValidator
-from profiles.models import UserProfile
 
 
 class Reviews(models.Model):
@@ -24,9 +22,7 @@ class Reviews(models.Model):
 
     def __str__(self):
         return self.name
-    
+
     def get_absolute_url(self):
         """Returns the full URL to the reviews route as a string"""
         return reverse("reviews")
-    
-
