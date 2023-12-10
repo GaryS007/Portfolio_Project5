@@ -1,10 +1,10 @@
 from django.shortcuts import render, get_object_or_404, redirect, reverse
-from .models import Reviews
-from django.contrib import messages
 from django.http import HttpResponse
+from django.contrib import messages
 from django.contrib.auth.decorators import login_required
-from .forms import ReviewsForm
 from profiles.models import UserProfile
+from .models import Reviews
+from .forms import ReviewsForm
 
 
 def reviews(request):

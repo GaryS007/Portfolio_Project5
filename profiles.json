@@ -1,0 +1,18 @@
+[
+    {
+        "model": "profiles.userprofile",
+        "pk": 1,
+        "fields": {
+            "user": 2,
+            "default_full_name": "Joe Blogg1",
+            "default_email": "test1@test.com",
+            "default_phone_number": "1234567890",
+            "default_street_address1": "test",
+            "default_street_address2": "tewst",
+            "default_town_or_city": "test",
+            "default_county": "test",
+            "default_postcode": "test",
+            "default_country": "IE"
+        }
+    }
+]
