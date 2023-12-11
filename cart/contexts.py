@@ -1,11 +1,10 @@
-from decimal import Decimal
 from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Product
 
 
 def cart_contents(request):
-
+    """ Shows the contents of the shoppers cart """
     cart_items = []
     total = 0
     product_count = 0
@@ -14,7 +13,7 @@ def cart_contents(request):
     for item_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=item_id)
         if product.on_sale or product.b_stock:
-            total+= quantity * product.sale_price
+            total += quantity * product.sale_price
         else:
             total += quantity * product.price
         product_count += quantity

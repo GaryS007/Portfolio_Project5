@@ -8,7 +8,14 @@ class ReviewsForm(forms.ModelForm):
 
     class Meta:
         model = Reviews
-        fields = ("name", "review_name", "review_title", "review_rating", "review_text", "image")
+        fields = (
+            "name",
+            "review_name",
+            "review_title",
+            "review_rating",
+            "review_text",
+            "image",
+        )
         widgets = {'name': forms.HiddenInput()}
 
     image = forms.ImageField(

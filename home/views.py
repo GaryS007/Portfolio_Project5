@@ -5,22 +5,22 @@ from .forms import ContactUsForm
 
 
 def index(request):
-    """ 
-    A view to return the index page 
+    """
+    A view to return the index page
     """
     return render(request, 'home/index.html')
 
 
 def contact_us(request):
-    """ 
+    """
     Handles the logic for the contact form
     """
     if request.method == 'POST':
         form = ContactUsForm(request.POST)
         if form.is_valid():
-            subject = form.cleaned_data ['subject']
+            subject = form.cleaned_data['subject']
             message = form.cleaned_data['message']
-            email = form.cleaned_data ['email']
+            email = form.cleaned_data['email']
             form.save()
             messages.success(request, 'Message successfully submitted')
             try:
@@ -40,9 +40,15 @@ def contact_us(request):
                     recipient_list=[email]
                 )
             except ImportError:
-                message.error(request, 'There was an error sending your message.')
+                message.error(
+                    request,
+                    'There was an error sending your message.',
+                )
         else:
-            messages.error(request, 'Failed to submit message. Please ensure the form is valid. ')
+            messages.error(
+                request,
+                'Failed to submit message. Please ensure the form is valid.',
+            )
     else:
         form = ContactUsForm()
 

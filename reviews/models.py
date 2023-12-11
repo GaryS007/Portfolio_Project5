@@ -16,7 +16,10 @@ class Reviews(models.Model):
         MinValueValidator(1),
         MaxValueValidator(5)],
         null=True)
-    image = models.ImageField(upload_to="reviews_images/", null=True, blank=True)
+    image = models.ImageField(
+        upload_to="reviews_images/",
+        null=True,
+        blank=True)
     approved = models.BooleanField(default=False)
     review_name = models.CharField(max_length=100, null=True)
 

@@ -626,6 +626,16 @@ ul {
     #delivery-banner h4 {
         font-size: .9rem;
     }
+
+    .btn.btn-outline-black.rounded-0,
+    .btn.btn-black.rounded-0 {
+        padding: .375rem .375rem;
+    }
+
+    .increment-qty,
+    .decrement-qty {
+        padding: 0.25rem .5rem !important;
+    }
 }
 
 

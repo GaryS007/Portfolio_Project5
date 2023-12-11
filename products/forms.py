@@ -10,13 +10,16 @@ class ProductForm(forms.ModelForm):
         fields = '__all__'
         widgets = {'sku': forms.HiddenInput()}
 
-    image = forms.ImageField(label='Image', required=False, widget=CustomClearableFileInput)
+    image = forms.ImageField(
+        label='Image',
+        required=False,
+        widget=CustomClearableFileInput,
+    )
 
     def __init_(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         categories = Category.object.all()
         friendly_names = [(c.id, c.get_friendly_name()) for c in categories]
-
 
         self.fields['category'].choices = friendly_names
         for field in self.fields.items():
