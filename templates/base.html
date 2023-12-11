@@ -34,16 +34,16 @@
               </div>
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="user-options">
-              {% if request.user.is_authenticated %}
+                {% if request.user.is_authenticated %}
                 {% if request.user.is_superuser %}
                   <a href="{% url 'add_product' %}" class="dropdown-item">Product Management</a>
                 {% endif %}
                 <a href="{% url 'profile' %}" class="dropdown-item">My Profile</a>
                 <a href="{% url 'account_logout' %}" class="dropdown-item">Logout</a>
-              {% else %}
+                {% else %}
                 <a href="{% url 'account_signup' %}" class="dropdown-item">Register</a>
                 <a href="{% url 'account_login' %}" class="dropdown-item">Login</a>
-              {% endif %}
+                {% endif %}
             </div>
           </li>
           <li class="list-inline-item">
@@ -86,17 +86,17 @@
   {% if messages %}
       <div class="message-container">
         {% for message in messages %}
-          {% with message.level as level %}
-            {% if level == 40 %}
-              {% include 'includes/toasts/toast_error.html' %}
-            {% elif level == 30 %}
-              {% include 'includes/toasts/toast_warning.html' %}
-            {% elif level == 25 %}
-              {% include 'includes/toasts/toast_success.html' %}
-            {% else %}
-              {% include 'includes/toasts/toast_info.html' %}
-            {% endif %}
-          {% endwith %}
+        {% with message.level as level %}
+        {% if level == 40 %}
+        {% include 'includes/toasts/toast_error.html' %}
+        {% elif level == 30 %}
+        {% include 'includes/toasts/toast_warning.html' %}
+        {% elif level == 25 %}
+        {% include 'includes/toasts/toast_success.html' %}
+        {% else %}
+        {% include 'includes/toasts/toast_info.html' %}
+        {% endif %}
+        {% endwith %}
         {% endfor %}
       </div>
   {% endif %}
@@ -109,17 +109,17 @@
   {% block postloadjs %}
   <script type="text/javascript">
     $('.toast').toast('show');
-    $(document).ready(function(){
-  
-      $(".fa-search").click(function(){
-        $(".wrap, .input").toggleClass("active");
-        $("input[type='text']").focus();
-      });
-      
+
+    // timeout to dismiss toast alert box
+    $(function () {
+        setTimeout(function () {
+            if ($(".toast").is(":visible")) {
+                    $(".toast").fadeOut();
+                }
+        }, 4000);
     });
   </script>
-  {% endblock %}
-  
+  {% endblock %}  
 </body>
 <!-- End of Base Body HTML -->
 </html>
