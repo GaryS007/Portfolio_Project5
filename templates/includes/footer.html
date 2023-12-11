@@ -47,9 +47,12 @@
                             </div>
                             <div class="footer-social-icon">
                                 <span>Follow us</span>
-                                <a href="#"><i class="fab fa-facebook-f facebook-bg"></i></a>
-                                <a href="#"><i class="fab fa-twitter twitter-bg"></i></a>
-                                <a href="#"><i class="fab fa-google-plus-g google-bg"></i></a>
+                                <a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                                aria-label="Visit our Facebook page (Opens in a new tab)"><i class="fab fa-facebook-f facebook-bg"></i></a>
+                                <a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                                aria-label="Visit our Facebook page (Opens in a new tab)"><i class="fab fa-twitter twitter-bg"></i></a>
+                                <a href="https://myaccount.google.com/" target="_blank" rel="noopener"
+                                aria-label="Visit our Facebook page (Opens in a new tab)"><i class="fab fa-google-plus-g google-bg"></i></a>
                             </div>
                         </div>
                     </div>
@@ -59,12 +62,16 @@
                                 <h3>Useful Links</h3>
                             </div>
                             <ul>
-                                <li><a href="#">Home</a></li>
-                                <li><a href="#">about</a></li>
-                                <li><a href="#">services</a></li>
-                                <li><a href="#">portfolio</a></li>
-                                <li><a href="#">Contact</a></li>
-                                <li><a href="#">Contact</a></li>
+                                <li><a href="{% url 'home' %}"
+                                    aria-label="Visit our Home page">Home</a></li>
+                                <li><a href="{% url 'products' %}"
+                                    aria-label="Visit our Products page">Products</a></li>
+                                <li><a href="{% url 'products' %}"
+                                    aria-label="Visit our Reviews page">Reviews</a></li>
+                                <li><a href="{% url 'contact' %}"
+                                    aria-label="Visit our Contact page">Contact</a></li>
+                                <li><a href="{% url 'products' %}?special_offers=clearance,b-stock"
+                                    aria-label="Visit our Specials page">Specials</a></li>
                             </ul>
                         </div>
                     </div>

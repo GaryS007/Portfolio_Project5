@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /accounts/
+Disallow: /cart/
+sitemap: https://project-5-drumloot-2349a17dd7f8.herokuapp.com/sitemap.xml

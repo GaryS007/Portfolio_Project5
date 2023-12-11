@@ -60,6 +60,7 @@ class Product(models.Model):
         blank=True)
     # Product Sales
     on_sale = models.BooleanField(default=False)
+    b_stock = models.BooleanField(default=False)
     sale_price = models.DecimalField(default=0, max_digits=6, decimal_places=2)
     out_of_stock = models.BooleanField(default=False)
     new_product = models.BooleanField(default=False)

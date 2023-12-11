@@ -18,8 +18,8 @@ import dj_database_url
 if os.path.exists('env.py'):
     import env
 
-# Build paths inside the project like this: BASE_DIR / 'subdir'.
-BASE_DIR = Path(__file__).resolve().parent.parent
+# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 # Quick-start development settings - unsuitable for production
@@ -30,8 +30,6 @@ SECRET_KEY = os.environ.get('SECRET_KEY', '')
 
 # SECURITY WARNING: don't run with debug turned on in production!!
 DEBUG = 'DEVELOPMENT' in os.environ
-
-DEBUG = 'DEBUG' in os.environ
 
 ALLOWED_HOSTS = [ '8000-garys007-portfolioproje-6asqr37pqz6.ws-eu106.gitpod.io', 'project-5-drumloot-2349a17dd7f8.herokuapp.com',]  # noqa
 
