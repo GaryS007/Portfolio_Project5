@@ -1,0 +1,20 @@
+[
+    {
+        "model": "auth.user",
+        "pk": 1,
+        "fields": {
+            "password": "pbkdf2_sha256$260000$CcvmnYykfBi8TeWl7ZUuVj$Fsd1kf2laCNY0vH/nMLRaTEUnAopSNpf2Yek8atJbcM=",
+            "last_login": "2023-12-10T18:20:55.214Z",
+            "is_superuser": true,
+            "username": "drum",
+            "first_name": "",
+            "last_name": "",
+            "email": "chattomeh@hotmail.com",
+            "is_staff": true,
+            "is_active": true,
+            "date_joined": "2023-12-10T17:54:02.350Z",
+            "groups": [],
+            "user_permissions": []
+        }
+    }
+]
