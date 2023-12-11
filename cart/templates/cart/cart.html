@@ -27,22 +27,22 @@
                     <div class="d-block d-md-none">
                         <div class="row">
                             <div class="col">
-                                {% include "cart/cart-total.html" %}
+                                {% include 'cart/cart-total.html' %}
                             </div>
                         </div>
                         <div class="row">
                             <div class="col">
-                                {% include "cart/cart-buttons.html" %}
+                                {% include 'cart/cart-buttons.html' %}
                                 <p class="text-muted mb-5">A Summary of your bag contents is below</p>
                             </div>
                         </div>
                         {% for item in cart_items %}
                             <div class="row">
                                 <div class="col-12 col-sm sm-6 mb-2">
-                                    {% include "cart/product-image.html" %}
+                                    {% include 'cart/product-image.html' %}
                                 </div>
                                 <div class="col-12 col-sm sm-6 mb-2">
-                                    {% include "cart/product-info.html" %}
+                                    {% include 'cart/product-info.html' %}
                                 </div>
                                 <div class="col-12 col-sm sm-6 order-sm-last">
                                     {% if item.product.on_sale %}
