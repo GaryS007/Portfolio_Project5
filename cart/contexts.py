@@ -12,7 +12,7 @@ def cart_contents(request):
 
     for item_id, quantity in cart.items():
         product = get_object_or_404(Product, pk=item_id)
-        if product.on_sale or product.b_stock:
+        if product.on_sale:
             total += quantity * product.sale_price
         else:
             total += quantity * product.price
