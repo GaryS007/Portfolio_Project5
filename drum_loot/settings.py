@@ -131,22 +131,18 @@ WSGI_APPLICATION = 'drum_loot.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# if 'DATABASE_URL' in os.environ:
-#    DATABASES = {
-#        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
-#    }
-#else:
+if 'DATABASE_URL' in os.environ:
+    DATABASES = {
+        'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
+    }
+else:
 
-#    DATABASES = {
-#        'default': {
-#            'ENGINE': 'django.db.backends.sqlite3',
-#            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-#        }
-#    }
-
-DATABASES = {
-    'default': dj_database_url.parse('postgres://wgjfpuxg:VCaVkg7qqKXJRCVcDImoMfwdWBZUeFB_@flora.db.elephantsql.com/wgjfpuxg')
-}
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        }
+    }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -236,9 +232,9 @@ if 'DEVELOPMENT' in os.environ:
     DEFAULT_FROM_EMAIL = 'email@email.com'
 else:
     EMAIL_BACKKEND = 'django.core.mail.backends.console.EmailBackend'
-    EMAIL_HOST = 'smtp.gmail.com'
+    EMAIL_USE_TLS = True
     EMAIL_PORT = '587'
+    EMAIL_HOST = 'smtp.gmail.com'
     EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWRD')
+    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
     DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_USE_TLS = False
