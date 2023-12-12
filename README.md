@@ -6,12 +6,12 @@ Drumloot is an E-commerce store where users can search and purchase drums and dr
 
 [Live Project Here](https://project-5-drumloot-2349a17dd7f8.herokuapp.com/)
 
-<p align="center"><img src="./assets/readme/balsamiq-responsiveness.png"
+<p align="center"><img src="./assets/readme/balsamiq/balsamiq-responsive.png"
         alt="Drumloot webpage on multiple devices"></p>
 
 README Table Content
 
-- [Drumloot - Intron](#drumloot---introduction)
+- [Drumloot - Intro](#drumloot---intro)
   - [User Experience - UX](#user-experience---ux)
     - [User Stories](#user-stories)
     - [Agile Methodology](#agile-methodology)
@@ -116,13 +116,13 @@ Provide CRUD functionality to users and admins. To provide a safe and secure met
 ### Agile Methodology
 
 All features added were done through GitHub's project management ticketing system
-[here]([https://github.com/YOUR PROJECT HERE](https://github.com/users/GaryS007/projects/3)
+[here](https://github.com/users/GaryS007/projects/3)
 
 ## Design
 
 #### Colours
 
-![Colour Palette](./assets/readme/website/colorPalette.jpg)<br>
+![Colour Palette](./assets/readme/website_images/colorPalette.jpg)<br>
 
 - The colour scheme is a nice dark grey contrast with the white and then a pop of orange. It adds a very professional look and feel, bringing necessary attention to buttons/links with the bright orange colour. Maintaining Black & White for primary colours is important to the store as they're stastically the best colours to use. The orange was punchy just like the drums!
 
