@@ -417,7 +417,7 @@ ul {
 }
 
 .footer-content {
-    position: reliative;
+    position: relative;
     z-index: 2;
 }
 

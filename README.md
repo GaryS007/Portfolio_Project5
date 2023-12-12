@@ -47,10 +47,7 @@ README Table Content
     - [sitemap.xml](#sitemapxml)
     - [robots.txt](#robotstxt)
     - [Sitemap Google Registration](#sitemap-google-registration)
-  - [AWS Setup Process](#aws-setup-process)
-    - [AWS S3 Bucket](#aws-s3-bucket)
-    - [IAM Set Up](#iam-set-up)
-    - [Connecting AWS to the Project](#connecting-aws-to-the-project)
+  - [Deployment](#deployment)
   - [Stripe Payments](#stripe-payments)
     - [Payments](#payments)
     - [Webhooks](#webhooks)
@@ -59,11 +56,6 @@ README Table Content
     - [Django Packages](#django-packages)
     - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
     - [Testing](#testing)
-  - [Creating the Django app](#creating-the-django-app)
-  - [Deployment of This Project](#deployment-of-this-project)
-  - [Final Deployment](#final-deployment)
-  - [Forking This Project](#forking-this-project)
-  - [Cloning This Project](#cloning-this-project)
   - [Credits](#credits)
     - [Content](#content)
     - [Information Sources / Resources](#information-sources--resources)
@@ -269,7 +261,7 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 
 - The website was optimized using various keywords for Drum Loots target audience. The audience ranging of all ages. Since this is not online an online store but a physical store, we are marketing to local consumers as well as globally. Each search term was chsoen based on popular search terms used for other drum store competitors. Some of which are more common than others and will harder to reach higher rankings. <br>
 
-![SEO - Keywords List](./assets/readme/website_images/seo)<br>
+![SEO - Keywords List](./assets/readme/website_images/seo.png)<br>
 
 ### sitemap.xml
 
