@@ -32,14 +32,14 @@ README Table Content
     - [Products Checkout](#products-checkout)
     - [Products Management](#products-management)
     - [Profile Page](#profile-page)
-      - [Edit Review Form](#edit-review-form)
+    - [Review Page](#reviews-page)
       - [Add/Edit Service Review Page](#addedit-service-review-page)
+    - [Contact Page](#contact-page)
     - [Navbar](#navbar)
     - [Footer](#footer)
     - [Page 404 - Page Not Found](#page-404---page-not-found)
     - [Messages](#messages)
-  - [Marketing and Social Media](#marketing-and-social-media)
-    - [Statista - Facebook Users](#statista---facebook-users)
+    - [Marketing](#marketing)
     - [Drumloot - Facebook Page](#Drumloot---facebook-page)
     - [Mailchimp Subscription Service](#mailchimp-subscription-service)
   - [Privacy Policy](#privacy-policy)
@@ -53,8 +53,7 @@ README Table Content
     - [Webhooks](#webhooks)
   - [Technologies Used](#technologies-used)
     - [Languages Used](#languages-used)
-    - [Django Packages](#django-packages)
-    - [Frameworks - Libraries - Programs Used](#frameworks---libraries---programs-used)
+    - [Libraries & Frameworks](#libraries--frameworks)
     - [Testing](#testing)
   - [Credits](#credits)
     - [Content](#content)
@@ -192,7 +191,7 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 
 - On this profile page, users can edit/update their profile details but also view all of their recent order history.<br>
 
-#### Reviews Page
+### Reviews Page
 
 ![Reviews Page](./assets/readme/website_images/reviews.png)
 
@@ -203,6 +202,12 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 ![Add/Edit Service Review Page](./assets/readme/website_images/editreview.png)
 
 - This page allows the validated user to post a review of their store / shopping experience.<br>
+
+### Contact Page
+
+![Contact Page](./assets/readme/website_images/contact.png)
+
+- This page allows the user to contact the drum store directly, whether it's feedback or standard queries. An email is delivered to the user to let them know it was received.
 
 ### Navbar
 

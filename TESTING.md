@@ -104,47 +104,66 @@ All CSS Code Passed Validation
 | 7          | Click the sign in link| Takes user to the sign in page | Y |          |
 | My Account      |                        |                  |      |             |
 | 1           | Click on My Account button in the navbar | Drop down options appear | Y |          |
-| 1           | Click on Login button in the navbar | Brought to login page | Y |          |
-| 2           | Click on the Register link in the form | Redirected to the sign up page | Y |          |
-| 3           | Enter valid password | Field will only accept correct passwords | Y |          |
-| 4           | Click on the Sign In button | Takes user to the index page abd receives confirmation message | Y |          |
-| 5           | Click "Logout" in the navbar | Takes user to log out page to confirm logout | Y |          |
-| 6           | Click "Logout" button on the page | Redirects user to index page and receive confirmation message | Y |          |
-| 2           | Click "Product Management" in the navbar | Brings user to page if superuser | Y | Upon adding the product it is added to the database  |
-| 4           | Click "Register" in the navbar | Brings user to sign up page | Y |          |
-| 4           | Click "My Profile" in the navbar | Brings user to the profile page | Y |          |
+| 2           | Click on Login button in the navbar | Brought to login page | Y |          |
+| 3           | Click on the Register link in the form | Redirected to the sign up page | Y |          |
+| 4           | Enter valid password | Field will only accept correct passwords | Y |          |
+| 5           | Click on the Sign In button | Takes user to the index page abd receives confirmation message | Y |          |
+| 6           | Click "Logout" in the navbar | Takes user to log out page to confirm logout | Y |          |
+| 7           | Click "Logout" button on the page | Redirects user to index page and receive confirmation message | Y |          |
+| 8           | Click "Product Management" in the navbar | Brings user to page if superuser | Y | Upon adding the product it is added to the database  |
+| 9           | Click "Register" in the navbar | Brings user to sign up page | Y |          |
+| 10           | Click "My Profile" in the navbar | Brings user to the profile page | Y |          |
+| 11          | Click "Forgot My Password" on login page| Redirects user to forgot password page | Y |          |
 | Navigation     |                        |                  |      |             |
 | 1          | Click "Logo" in the navbar | Brings user to Home page | Y |          |
-| 6          | Click the "Filter Products by" link and all menu items | Takes user to the products page with the correct products filtered | Y |          |
-| 6          | Click the "Home Decoration" link and all menu items | Takes user to the products page with the correct products filtered | Y |          |
-| 6          | Click the "For Children" link and all menu items | Takes user to the products page with the correct products filtered | Y |          |
-| 6          | Click the "Antique" link and all menu items | Takes user to the products page with the correct products filtered | Y |          |
-| 6          | Click the "Contact us" link | Takes user to the contact us page | Y |          |
+| 2          | Click the "All Products" link | Dropdown menu appears | Y |          |
+| 3          | Click the "Acoustic Drums" link | Dropdown menu appears | Y |          |
+| 4          | Click the "Electric Drums" link | Dropdown menu appears | Y |          |
+| 5          | Click the "Special Offers" link | Dropdown menu appears | Y |          |
+| 6          | Click the "Contact Reviews" link | Dropdown menu appears | Y |          |
+| 7          | Click on each "All Products" menu items | Brings User to appropriate filtered page | Y |          |
+| 8          | Click on each "Acoustic Drums" menu items | Brings User to appropriate filtered page | Y |          |
+| 9          | Click on each "Electric Drums" menu items | Brings User to appropriate filtered page | Y |          |
+| 10          | Click on each "Special Offers" menu items | Brings User to appropriate filtered page | Y |          |
+| 11         | Click on each "Contact Reviews" menu items | Brings User to appropriate filtered page | Y |          |
+| Search    |                        |                  |      |             |
+| 1      | Enter a search term into the box provided and click search | Redirects users to filtered search results | Y |          |
 | Homepage  |                        |                  |      |             |
-| 1      | Click on shop now button | Redirects user to the products page | Y |          |
+| 1      | Click on Special Offers button | Redirects user to the Special Offers page | Y |          |
 | Products Page  |                        |                  |      |             |
 | 1        | Click on product image | Brings user to product detail page | Y |          |
-| 2        | Click on the add to favorites button | User receives message saying thank you and favorite added to database | Y |          |
+| 2        | Click on "+" or "-" to adjust quantity | Number changes to reflect interaction | Y |          |
+| 3        | Click on "Add to Cart"  button | Adds product to shopping cart with appropriate quantity | Y |          |
 | 4  | Click on the delete button as superuser  | Product is deleted | Y |          |
 | 5  | Click on the edit button  | User is redirected to the edit product page | Y |  Upon editing the comment the product is updated        |
-| 8  | Visit the delete product url while not signed in as that user  | User is redirected to a page saying you can only modify products if you are an admin them | Y |          |
-| 9  | Visit the edit product url while not signed in as that user  | User is redirected to a page saying you can only modify products if you are an admin | Y |          |
+| 6  | Visit the delete product url while not signed in as that user  | User is redirected to a page saying you can only modify products if you are an admin them | Y |          |
+| 7  | Visit the edit product url while not signed in as that user  | User is redirected to a page saying you can only modify products if you are an admin | Y |          |
+| All Reviews Page  |                        |                  |      |             |
+| 1        | Click on Add Review | Brings Add Review form if user is logged in | Y |          |
+| 2        | My Account option displaye if not logged in | User is redirected to account page to login/register | Y |          |
+| 3  | Click on the delete button as user or superuser  | Review is deleted | Y |          |
+| 4  | Click on the edit button  | User or superuser is redirected to the edit Review page | Y |  Upon editing the comment the Review is updated        |
+| 5  | Visit the delete review url while not signed in as that user  | User is redirected to a page saying you must be logged in | Y |          |
+| 6  | Visit the edit review url while not signed in as that user  | User is redirected to a page saying you must be logged in | Y |          |
+| Contact Us Page  |                        |                  |      |             |
+ 1        | Fill out the Contact Form | Receive an email confirming that the form submission was received | Y |          |
+ | Site Messages  |                        |                  |      |             |
+ 1        | Notification that something is successful or has failed | As you add/edit/delete or submit forms a message will appear top right of the site | Y |          |
 | Admin Panel  |                        |                  |      |             |
 | 1    | Open admin url while signed in as a regular user | User is informed they are not authorized and is prompted to sign in with a different account  | Y |          |
 | 2    | Sign in as the superuser | Redirects user to the admin panel | Y |          |
 | 3   | Click on any of the models in the admin panel | User sees a list of the objects with that model | Y |     |
 | 4    | Click a specific object within the list of models  | User is shown the properties of that object | Y |  The user may modify, delete, or add objects from this page    |
 | 5     | Click delete on an object | User is taken to delete confirmation page and upon confirmation receive a message at the top of the page | Y |   |
-| 6     | Approve a user comment | The comment shows as approved and all users can then view that comment | Y |    |
-| 7         | Unapprove a user comment | The comment can only be seen by the admin until the comment is approved | Y |          |
-| 8       | Edit a post | The content of the post reflects the changes made | Y |          |
+| 6     | Approve a user review | The review shows as approved and all site visitors can then view that review | Y |    |
+| 7         | Unapprove a user review | The review can only be seen by the admin until the comment is reapproved | Y |          |
 | 404 Page  |                        |                  |      |             |
 | 9        | Enter an invalid url  | User redirected to a custom 404 error page | Y |          |
 | Payments  |                        |                  |      |             |
 | 1    | Click secure checkout  | Y | User is taken to checkout page and order summary is shown | Y |          |
 | 2    | Fill in information and submit form | Order is processed and user taken to success page | Y |  All form validation functions correctly        |
 | 3   | Remove or change contents in the cart | The user can change quantity or remove products as wanted | Y |     |
-| 4    | Click a specific object within the list of models  | User is shown the properties of that object | Y |  The user may modify, delete, or add objects from this page    |
+
 
 
 ## Bugs
