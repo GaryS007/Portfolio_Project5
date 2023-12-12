@@ -141,7 +141,7 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 
 ## Entity Relationship
 
-![Entity Relationship](.assets/readme/website_images/entity-relationship.png)<br>
+![Entity Relationship](./assets/readme/website_images/entity-relationship.png)<br>
 
 ## Features
 
