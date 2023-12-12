@@ -225,7 +225,7 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 
 ### Page 404 - Page Not Found
 
-![Page 404 - Page Not Found](./assets/readme/features/FILL IN WITH YOUR DESTINATION.jpg)
+![Page 404 - Page Not Found](./assets/readme/website_images/404.png)
 
 - The custom 404 page will replace the standard 404 error page when a user visits a URL that does not exist.<br>  
 
