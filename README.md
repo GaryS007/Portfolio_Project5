@@ -1,7 +1,7 @@
 # Drumloot - Intro
 
 Drum Loot is a full-stack, responsive website build for my Code Institute Full-stack development program using Django framework.<br>
-Drumloot is an E-commerce store where users can search and purchase drums and drum related accessories. Users are able to sign up for an account by filling in their personal information on the website’s profile page, leave a review and fill in a contact form. In addition, users are able to subrsibe to the Drum Loot Newsletter using MailChimp. Social Media links are easily accessible from this website.
+Drumloot is an E-commerce store where users can search and purchase drums and drum related accessories. Users are able to sign up for an account by filling in their personal information on the website’s profile page, leave a review and fill in a contact form. In addition, users are able to subsrsibe to the Drum Loot Newsletter using MailChimp. Social Media links are easily accessible from this website.
 
 
 [Live Project Here](https://project-5-drumloot-2349a17dd7f8.herokuapp.com/)
@@ -140,7 +140,7 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 
 ![Homepage](./assets/readme/website_images/homepage.png)
 
-- The landing page is an instantly vibrant landing page. Providing a proffesional feel with all necessary navigation to start shopping.<br>
+- The landing page is an instantly vibrant landing page. Providing a professional feel with all necessary navigation to start shopping.<br>
 
 ### Products Page
 
@@ -183,7 +183,7 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 
 ![Products Management](./assets/readme/website_images/add-product.png)
 
-- Once a superuser is logged in, they can add products via the add product page. This page can be access by Project Management in the superusers profile.<br>
+- Once a superuser is logged in, they can add products via the add product page. This page can be accessed by Project Management in the superusers profile.<br>
 
 ### Profile Page
 
@@ -226,7 +226,7 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 
 ![Footer](./assets/readme/website_images/footer.png)
 
-- The footer contains information about the store such as social media links, relevant website links, contact info and the ability to subscribe to Drum Loots newsletter.<br>
+- The footer contains information about the store such as social media links, relevant website links, contact info and the ability to subscribe to Drum Loot's newsletter.<br>
 
 ### Page 404 - Page Not Found
 
@@ -242,7 +242,7 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 
 ## Marketing
 
-- Since Drum Loot is not only an online store but a physical one. We want to ensure our marketing covers both bases. Social Media Marketing can be done via Facebook and Instagram to promote the brands and sales we have currently to new potential customers but also existing ones. The target demographic for the store ranges from 12-65. This is a wide age range and as a result marketing will need to reflect this. To target a younger audience we would likely target parents who would be purchasing drums as a gift for their children. Our Facebook page can include photography, relevant offers and drum demonstrations to showcase the equipment we have for sale.<br>
+Since Drum Loot is not only an online store but a physical one. We want to ensure our marketing covers both bases, Social Media Marketing can be done via Facebook and Instagram to promote the brands and sales we have currently to new potential customers but also existing ones. The target demographic for the store ranges from 12-65. This is a wide age range and as a result marketing will need to reflect this. To target a younger audience we would likely target parents who would be purchasing drums as a gift for their children. Our Facebook page can include photography, relevant offers and drum demonstrations to showcase the equipment we have for sale.<br>
 
 ### Drumloot - Facebook Page
 
@@ -264,7 +264,7 @@ Wireframes for this project are located [here](WIREFRAMES.md)
 
 ## Search Engine Optimization
 
-- The website was optimized using various keywords for Drum Loots target audience. The audience ranging of all ages. Since this is not online an online store but a physical store, we are marketing to local consumers as well as globally. Each search term was chsoen based on popular search terms used for other drum store competitors. Some of which are more common than others and will harder to reach higher rankings. <br>
+The website was optimized using various keywords for Drum Loots target audience. The audience ranging of all ages. Since this is not only an online store but a physical store, we are marketing to local consumers as well as globally. Each search term was chosen based on popular search terms used for other drum store competitors. Some of which are more common than others and will be harder to reach with higher rankings. <br>
 
 ![SEO - Keywords List](./assets/readme/website_images/seo.png)<br>
 
