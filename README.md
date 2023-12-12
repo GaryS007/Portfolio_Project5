@@ -506,7 +506,7 @@ You can read more information on how to do this through the offical GitHub Docum
 
 ### Testing
 
-Testing results are [here](FILL IN WITH YOUR DESTINATION.md)
+Testing results are [here](TESTING.md)
 
 ## Credits
 
