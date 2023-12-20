@@ -78,7 +78,11 @@ All Python code written by me passes PEP8 standards [CI Python Linter](https://p
 ### HTML WC3 Validator
 
 All HTML Code written by me passed through the [WC3 HTML validator](https://validator.w3.org/#validate_by_url).
-- All issues were resolved.
+- Some issues were not resolved.
+- Any issues remaining I'm fully aware of and the website functions correctly regardless of these known issues.
+- Empty heading on H1 class due to loading spinner
+- Placeholder attribute for the profile form / Country field.
+
 
 ### Jigsaw CSS Validator
 
