@@ -145,6 +145,8 @@ All CSS Code Passed Validation
 | 4  | Click on the edit button  | User or superuser is redirected to the edit Review page | Y |  Upon editing the comment the Review is updated        |
 | 5  | Visit the delete review url while not signed in as that user  | User is redirected to a page saying you must be logged in | Y |          |
 | 6  | Visit the edit review url while not signed in as that user  | User is redirected to a page saying you must be logged in | Y |          |
+| 7  | Try to edit another users review  | User receives error message preventing them from doing so | Y |          |
+| 8  | Try to delete another users review  | User receives error message preventing them from doing so | Y |          |
 | Contact Us Page  |                        |                  |      |             |
  1        | Fill out the Contact Form | Receive an email confirming that the form submission was received | Y |          |
  | Site Messages  |                        |                  |      |             |
