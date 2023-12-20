@@ -63,7 +63,10 @@ def edit_review(request, pk):
     review = get_object_or_404(Reviews, id=pk)
     if request.method == 'POST':
         form = ReviewsForm(request.POST, request.FILES, instance=review)
-        if form.is_valid() and review.name == request.user.username or request.user.is_superuser:
+        can_user_edit = (
+            review.name == request.user.username or request.user.is_superuser
+            )
+        if form.is_valid() and can_user_edit:
             review = form.save(commit=False)
             review.approved = False
             form.save()
@@ -101,7 +104,8 @@ def delete_review(request, pk):
         return redirect(reverse('reviews'))
 
     review = get_object_or_404(Reviews, id=pk)
-    if review.name == request.user.username or request.user.is_superuser:
+    can_user_del = (request.user.username or request.user.is_superuser)
+    if review.name == can_user_del:
         review.delete()
         messages.success(request, 'Review deleted!')
     else:
