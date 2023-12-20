@@ -62,8 +62,10 @@ def edit_review(request, pk):
 
     review = get_object_or_404(Reviews, id=pk)
     if request.method == 'POST':
-        form = ReviewsForm(request.POST, request.FILES,)
-        if form.is_valid():
+        form = ReviewsForm(request.POST, request.FILES, instance=review)
+        if form.is_valid() and review.name == request.user.username or request.user.is_superuser:
+            review = form.save(commit=False)
+            review.approved = False
             form.save()
             messages.success(
                 request,
@@ -99,6 +101,12 @@ def delete_review(request, pk):
         return redirect(reverse('reviews'))
 
     review = get_object_or_404(Reviews, id=pk)
-    review.delete()
-    messages.success(request, 'Review deleted!')
+    if review.name == request.user.username or request.user.is_superuser:
+        review.delete()
+        messages.success(request, 'Review deleted!')
+    else:
+        messages.error(
+            request,
+            'Oops, are you logged into the right account?'
+        )
     return redirect(reverse('reviews'))

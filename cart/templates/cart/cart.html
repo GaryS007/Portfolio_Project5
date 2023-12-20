@@ -46,15 +46,15 @@
                                 </div>
                                 <div class="col-12 col-sm sm-6 order-sm-last">
                                     {% if item.product.on_sale %}
-                                    <p class="my-0"><strike>$ {{ item.product.price }}</strike></p>
+                                    <p class="my-0 strike text-orange">$ {{ item.product.price }}</p>
                                     <p class="my-0 large-text text-success">Price Each: ${{ item.product.sale_price }}</p>
                                     {% else %}
                                     <p class="my-0">Price Each: ${{ item.product.price }}</p>
                                     {% endif %}
                                     {% if item.product.on_sale %}
-                                    <p class"my-0">Subtotal: ${{ item.product.sale_price | calc_subtotal:item.quantity }}</p>
+                                    <p class="my-0">Subtotal: ${{ item.product.sale_price | calc_subtotal:item.quantity }}</p>
                                     {% else %}
-                                    <p class"my-0">Subtotal: ${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                    <p class="my-0">Subtotal: ${{ item.product.price | calc_subtotal:item.quantity }}</p>
                                     {% endif %}
                                 </div>
                                 <div class="col-12 col-sm sm-6 mb-2">{% include 'cart/quantity-form.html' %}</div>
@@ -89,7 +89,9 @@
                                     </td>
                                     <td class="py-3">
                                         {% if item.product.on_sale %}
-                                        <p class="my-0"><strike>$ {{ item.product.price }}</strike></p>
+                                        <p class="my-0 strike text-orange">$ {{ item.product.price }}
+
+                                        </p>
                                         <p class="my-0 large-text text-success">${{ item.product.sale_price }}</p>
                                         {% else %}
                                         <p class="my-0">${{ item.product.price }}</p>
@@ -100,9 +102,9 @@
                                     </td>
                                     <td class="py-3">
                                         {% if item.product.on_sale %}
-                                        <p class"my-0">${{ item.product.sale_price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0">${{ item.product.sale_price | calc_subtotal:item.quantity }}</p>
                                         {% else %}
-                                        <p class"my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
+                                        <p class="my-0">${{ item.product.price | calc_subtotal:item.quantity }}</p>
                                         {% endif %}
                                     </td>
                                 </tr>
@@ -135,7 +137,7 @@
 
 {% block postloadjs %}
 {{ block.super }}
-<script type ="text/javascript">
+<script>
     $('.btt-link').click(function(e) {
         window.scrollTo(0,0)
     })
@@ -143,7 +145,7 @@
 
 {% include 'products/includes/quantity_input_script.html' %}
 
-<script type="text/javascript">
+<script>
     // Update quantity on click
     $('.update-link').click(function(e) {
         var form = $(this).prev('.update-form');

@@ -9,7 +9,7 @@
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 All Products
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-links">
+            <div class="dropdown-menu border-0" aria-labelledby="all-products-link">
                 <a href="{% url 'products' %}?sort=price&direction=asc" class="dropdown-item">By Price</a>
                 <a href="{% url 'products' %}?sort=rating&direction=desc" class="dropdown-item ">By Rating</a>
                 <a href="{% url 'products' %}?sort=category&direction=asc" class="dropdown-item ">By Category</a>
@@ -18,7 +18,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-acoustic-drums-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Acoustic Drums
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-acoustic-drums-links">
@@ -34,7 +34,7 @@
             <a class="logo-font font-weight-bold nav-link text-white mr-5" href="#" id="all-electric-drums-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Electric Drums
             </a>
-            <div class="dropdown-menu border-0" aria-labelledby="all-products-links">
+            <div class="dropdown-menu border-0" aria-labelledby="all-electric-drums-link">
                 <a href="{% url 'products' %}?category=electronic-drumkits" class="dropdown-item">Electronic Drumkits</a>
                 <a href="{% url 'products' %}?category=drum-modules" class="dropdown-item ">Electronic Drum Modules</a>
                 <a href="{% url 'products' %}?category=electronic-drum-pads" class="dropdown-item ">Electronic Drum Pads</a>
@@ -43,7 +43,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'products' %}?special_offers=clearance,b-stock" id="all-products-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'products' %}?special_offers=clearance,b-stock" id="all-specials-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Special Offers
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-specials-links">
@@ -54,7 +54,7 @@
         </li>
 
         <li class="nav-item dropdown">
-            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'reviews' %}" id="reviews-link" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a class="logo-font font-weight-bold nav-link text-white mr-5" href="{% url 'reviews' %}" id="all-reviews-links" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Contact | Reviews
             </a>
             <div class="dropdown-menu border-0" aria-labelledby="all-reviews-links">

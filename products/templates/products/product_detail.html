@@ -30,7 +30,7 @@
                 <div class="product-details-container mb-5 mt-md-5">
                     <p class="mb-1 font-weight-bold">{{ product.name }}</p>
                     {% if product.on_sale %}
-                        <p class="lead mb-0 text-left font-weight-bold"><strike class="text-orange">${{ product.price }}</strike></p>
+                        <p class="lead mb-0 text-left font-weight-bold strike text-orange">${{ product.price }}</p>
                         <p class="lead mb-0 text-left font-weight-bold text-success">${{ product.sale_price }}<span class="small text-muted"> Limited Time Offer!</span></p>
                     {% else %}
                     <p class="lead mb-0 text-left font-weight-bold">${{ product.price }}</p>

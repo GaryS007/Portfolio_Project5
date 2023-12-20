@@ -23,7 +23,7 @@
                         <a class="btn btn-black rounded-0 text-uppercase mt-2" href="{% url 'add_review' %}" role="button">Add Review</a>
                     </div>
                 {% else %}
-                    <h6 class="text-muted">You need to login or register to write a review: <a href="{% url 'profile' %}">My Account</a></h5>
+                    <h6 class="text-muted">You need to login or register to write a review: <a href="{% url 'profile' %}">My Account</a></h6>
                 {% endif %}
                 <hr>
             </div>
@@ -35,7 +35,7 @@
         <p class="review-text text-muted">by: <strong>{{ review.review_name }}</strong></p>
         <p><i class="fa-solid fa-quote-left"></i> {{ review.review_text }} <i class="fa-solid fa-quote-right"></i></p>
         <p class="text-muted review-text">Posted on: {{ review.updated_on }}</p>
-        <span id="review-rating">
+        <span class="review-rating">
             <!-- Star Rating if statement -->
             {% if review.review_rating == 5 %}
             <i class="fa-solid fa-star"></i>
@@ -104,8 +104,8 @@
             Are you sure you want to <strong class="text-danger">DELETE</strong> your Review?
             </div>
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <a type="button" class="btn btn-secondary" href="{% url 'delete_review' review.id %}">
+            <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <a class="btn btn-secondary" href="{% url 'delete_review' review.id %}">
             Delete Review
             </a>
             </div>

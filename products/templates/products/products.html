@@ -82,9 +82,10 @@
                                 <div class="card-footer bg-white pt-0 border-0 text-left">
                                     <div class="row">
                                         <div class="col">
-                                            <p class="lead mb-0 text-left fw-light"><strike class="text-orange">${{ product.price }}</strike>
-                                                <span class="lead mb-0 text-left font-weight-bold">${{ product.sale_price }}</span>
-                                            </p>
+                                            <p class="lead mb-0 text-left fw-light strike text-orange">${{ product.price }}</p>
+                                                <p>
+                                                <span class="lead mb-0 text-left font-weight-bold text-success">${{ product.sale_price }}</span>
+                                                </p>
                                             {% if product.out_of_stock %}
                                             <p class="small mt-1 mb-0">
                                                 <img class="w-25" src="{{ MEDIA_URL }}out-of-stock.png" alt="{{ product.name }}">
@@ -132,7 +133,7 @@
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                         <h5 class="modal-title" id="deleteProductLabel">Delete Review</h5>
-                                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <button class="close" data-dismiss="modal" aria-label="Close">
                                                             <span aria-hidden="true">&times;</span>
                                                         </button>
                                                         </div>
@@ -140,8 +141,8 @@
                                                         Are you sure you want to <strong class="text-danger">DELETE</strong> this Product?
                                                         </div>
                                                         <div class="modal-footer">
-                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                                        <a type="button" class="btn btn-secondary" href="{% url 'delete_product' product.id %}">
+                                                        <button class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <a class="btn btn-secondary" href="{% url 'delete_product' product.id %}">
                                                         Delete Product
                                                         </a>
                                                         </div>
@@ -299,13 +300,13 @@
 {% endblock %}
 {% block postloadjs %}
     {{ block.super }}
-    <script type ="text/javascript">
+    <script>
         $('.btt-link').click(function(e) {
             window.scrollTo(0,0)
         })
     </script>
     
-    <script type="text/javascript">
+    <script>
         $('#sort-selector').change(function() {
             var selector = $(this);
             var currentUrl = new URL(window.location);
